@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,900&display=swap');
+html, body{
+    margin: 0; 
+    height: 100%;
+    width: 100%;
+}
+
+nav{
+    position: relative;
+    margin: 0 50px 0 50px;
+    padding: 30px 0;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header{
+    position: relative;
+    text-align: center;
+    height: 800px;
+    background-image: url("./images/desktop/image-header.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+header h1{
+    text-transform: uppercase;
+    font-family: "Fraunces";
+    font-size: 3em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 10px;
+    margin-top: 70px;
+}
+
+header #arrow{
+    margin-top: 100px;
+}
+
+.navbar{
+    right: 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar li{
+    display: inline;
+    padding-left: 40px;
+}
+
+.navbar li:first-child{
+    padding-left: 0;
+}
+
+.navbar li a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: "Barlow";
+}
+
+.navbar li a.active{
+    font-family: "Fraunces";
+    color: black;
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 2em;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.navbar li a.active:hover{
+    background-color: rgba(106,210,252,255);
+    color: white;
+    transition: 0.3s ease;
+}
+
+#icon-hamburger{
+    display: none;
+}
+
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+
+.dropdown-menu{
+    display: none;
+}
+
+.dropdown-menu ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: #FFF;
+    font-family: "Barlow";
+}
+
+.dropdown-menu ul li{
+    display: block;
+    padding: 15px 0;
+}
+
+.dropdown-menu ul li:first-child{
+    padding-top: 30px;
+}
+
+.dropdown-menu ul li:last-child{
+    padding: 40px 0 50px 0;
+}
+
+.dropdown-menu ul li a{
+    text-decoration: none;
+}
+
+.dropdown-menu ul li a:not(.dropdown-active){
+    color: gray;
+}
+
+.dropdown-active{
+    font-family: "Fraunces";
+    text-transform: uppercase;
+    color: black;
+    background-color: rgba(251,214,1,255);
+    padding: 20px 30px;
+    border-radius: 2em;
+}
+
+
+#triangle{
+    position: inherit;
+    right: 0;
+    top: -30px;
+    width: 0;
+	height: 0;
+	border-bottom: 50px solid white; 
+	border-left: 50px solid transparent;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+}
+
+.description h1{
+    margin: 0;
+    font-family: "Fraunces";
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.description h1,
+.description a{
+    color: hsl(212, 27%, 19%);
+}
+
+.description p{
+    font-family: "Barlow";
+    color: rgb(155, 151, 151);
+    margin: 40px 0 30px 0;
+    line-height: 1.5;
+}
+
+.description a{
+    text-decoration: none;
+    font-family: "Fraunces";
+    text-transform: uppercase;
+}
+
+#link-1, #link-2{
+    position: relative;
+    display: block;
+    width: fit-content;
+}
+
+#link-1::after, #link-2::after{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    right: -6px;
+    width: 110%;
+    height: 10px;
+    border-radius: 5px;
+    z-index: -1;
+    transition: 0.3s ease;
+}
+
+#link-1::after{
+    background-color: rgba(249,245,191,255);
+}
+
+#link-1:hover::after{
+    background-color: rgba(251,217,7,255);
+}
+
+#link-2::after{
+    background-color: rgba(254,216,209,255);
+}
+
+#link-2:hover::after{
+    background-color: rgba(250,110,93,255);
+}
+
+.description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    width: 50%;
+}
+
+.advantages img, .description{
+    width: 50%;
+}
+
+.advantages img{
+    height: 50%;
+}
+
+.design-card{
+    width: 50%;
+    height: 600px;
+    position: relative;
+}
+
+#card-1{
+    background-image: url("./images/desktop/image-graphic-design.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#card-2{
+    background-image: url("./images/desktop/image-photography.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.design-text{
+    position: absolute;
+    width: 55%;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#graphic-design-title{
+    font-family: "Fraunces";
+    font-size: 1.5em;
+    color: hsl(167, 40%, 24%);;
+}
+
+#photography-title{
+    font-family: "Fraunces";
+    font-size: 1.5em;
+    color: hsl(198, 62%, 26%);
+}
+
+#graphic-design-text{
+    font-family: "Barlow";
+    color: hsl(167, 39%, 34%);
+    line-height: 1.6;
+}
+
+#photography-text{
+    font-family: "Barlow";
+    color: hsl(198, 60%, 33%);
+    line-height: 1.6;
+}
+
+.client-testimonials{
+    padding: 120px 0 120px 0;
+    background-color: rgba(255,251,248,255);
+}
+
+.client-testimonials h3{
+    display: flex;
+    justify-content: center;
+    margin: 0px 0 100px 0;
+    font-family: "Fraunces";
+    text-transform: uppercase;
+    color: rgb(190, 188, 188);
+    letter-spacing: 7px;
+}
+
+.client-testimonials p{
+    font-family: "Barlow";
+    color: rgb(95, 94, 94);
+    line-height: 1.6;
+    margin: 50px 0 16px 0;
+}
+
+.client-testimonials h4{
+    font-family: "Fraunces";
+    color: hsl(212, 27%, 19%);
+    margin: 0 0 10px 0;
+}
+
+.client-testimonials h6{
+    font-family: "Barlow";
+    font-size: 13px;
+    color: rgba(178,178,178,255);
+    margin: 0;
+}
+
+ul.testimonials-cards{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 50px;
+}
+
+ul.testimonials-cards li{
+    position: relative;
+    width: 24%;
+    height: 352px;
+    text-align: center;
+}
+
+.client-info{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 132px;
+}
+
+ul.testimonials-cards img{
+    border-radius: 5em;
+    width: 80px;
+}
+
+.product-gallery{
+    display: flex;
+}
+
+.product-gallery img{
+    width: 25%;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(144,212,197,255);
+    padding: 60px 0;
+}
+
+#footer-logo, ul.services, ul.social-icons{
+    margin: auto;
+}
+
+#footer-logo{
+    width: 150px;
+}
+
+ul.services, ul.social-icons{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.services{
+    gap: 60px;
+    padding: 40px 0 80px 0px;
+}
+
+ul.services a{
+    text-decoration: none;
+    font-family: "Barlow";
+    color: hsl(168, 34%, 41%);
+}
+
+ul.services a:hover{
+    color: #FFF;
+}
+
+ul.social-icons{
+    gap: 20px;
+}
+
+ul.social-icons img:hover{
+    filter: brightness(0) invert(1);
+}
+
+@media screen and (max-width: 1024px){
+    header h1{
+        font-size: 32px;
+    }
+
+    .description h1{
+        font-size: 1.3em;
+    }
+
+    .description p{
+        font-size: 13px;
+        width: 240px;
+    }
+
+    #link-1, #link-2{
+        font-size: 14px;
+    }
+
+    #graphic-design-title, #photography-title{
+        font-size: 22px;
+    }
+
+    #graphic-design-text, #photography-text{
+        font-size: 13px;
+        width: 290px;
+        margin: 0 0 14px 0;
+    }
+
+    .design-text{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .client-testimonials p{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    nav{
+        margin: 0 30px;
+        padding: 20px 0;
+    }
+
+    ul.navbar{
+        display: none;
+    }
+
+    #icon-hamburger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+
+    .advantages img{
+        order: -1;
+        width: 100%;
+        
+    }
+
+    .description{
+        padding: 50px 0px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .wrapper{
+        width: fit-content;
+    }
+
+    .wrapper h1{
+        width: 80%;
+        font-size: 24px;
+    }
+
+    .wrapper p{
+        width: 270px;
+        margin: 40px auto 30px;
+        font-size: 15px;
+    }
+
+    .wrapper h1, #link-1, #link-2{
+        margin: auto;
+    }
+
+    .design-card{
+        width: 100%;
+    }
+    
+    #graphic-design-text, #photography-text{
+        font-size: 16px;
+        width: 290px;
+        margin: 0;
+    }
+
+    .client-testimonials{
+        padding: 60px 0;
+    }
+
+    .client-testimonials h3{
+        font-size: 13px;
+        margin: 0 0 50px;
+    }
+
+    .client-testimonials p{
+        margin: 40px 0 16px;
+    }
+
+    ul.testimonials-cards{
+        flex-direction: column;
+        gap: 70px
+    }
+
+    ul.testimonials-cards li{
+        margin: auto;
+        width: 300px;
+        height: 270px;
+    }
+
+    .product-gallery{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .product-gallery img{
+        width: 50%;
+    }
+}
