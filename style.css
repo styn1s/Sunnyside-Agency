@@ -5,16 +5,6 @@ html, body{
     width: 100%;
 }
 
-nav{
-    position: relative;
-    margin: 0 50px 0 50px;
-    padding: 30px 0;
-    height: 63px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 header{
     position: relative;
     text-align: center;
@@ -37,6 +27,16 @@ header h1{
 
 header #arrow{
     margin-top: 100px;
+}
+
+nav{
+    position: relative;
+    margin: 0 50px 0 50px;
+    padding: 30px 0;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .navbar{
@@ -89,10 +89,6 @@ header #arrow{
     width: 100%;
 }
 
-.dropdown-menu{
-    display: none;
-}
-
 .dropdown-menu ul{
     margin: 0;
     padding: 0;
@@ -131,7 +127,6 @@ header #arrow{
     border-radius: 2em;
 }
 
-
 #triangle{
     position: inherit;
     right: 0;
@@ -147,16 +142,16 @@ header #arrow{
     display: flex;
 }
 
-.description h1{
-    margin: 0;
-    font-family: "Fraunces";
-    font-size: 2.5em;
-    font-weight: bold;
-}
-
 .description h1,
 .description a{
     color: hsl(212, 27%, 19%);
+    font-family: "Fraunces";
+}
+
+.description h1{
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
 }
 
 .description p{
@@ -167,18 +162,14 @@ header #arrow{
 }
 
 .description a{
-    text-decoration: none;
-    font-family: "Fraunces";
-    text-transform: uppercase;
-}
-
-#link-1, #link-2{
     position: relative;
     display: block;
     width: fit-content;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-#link-1::after, #link-2::after{
+.description a::after{
     content: "";
     position: absolute;
     bottom: -3px;
@@ -220,26 +211,20 @@ header #arrow{
     width: 50%;
 }
 
-.advantages img{
-    height: 50%;
-}
-
 .design-card{
+    position: relative;
     width: 50%;
     height: 600px;
-    position: relative;
+    background-size: cover;
+    background-position: center;
 }
 
 #card-1{
     background-image: url("./images/desktop/image-graphic-design.jpg");
-    background-size: cover;
-    background-position: center;
 }
 
 #card-2{
     background-image: url("./images/desktop/image-photography.jpg");
-    background-size: cover;
-    background-position: center;
 }
 
 .design-text{
@@ -251,28 +236,30 @@ header #arrow{
     text-align: center;
 }
 
-#graphic-design-title{
+.design-text h3{
     font-family: "Fraunces";
     font-size: 1.5em;
-    color: hsl(167, 40%, 24%);;
+}
+
+.design-text p{
+    font-family: "Barlow";
+    line-height: 1.6;
+}
+
+#graphic-design-title{
+    color: hsl(167, 40%, 24%);
 }
 
 #photography-title{
-    font-family: "Fraunces";
-    font-size: 1.5em;
     color: hsl(198, 62%, 26%);
 }
 
 #graphic-design-text{
-    font-family: "Barlow";
     color: hsl(167, 39%, 34%);
-    line-height: 1.6;
 }
 
 #photography-text{
-    font-family: "Barlow";
     color: hsl(198, 60%, 33%);
-    line-height: 1.6;
 }
 
 .client-testimonials{
@@ -280,31 +267,37 @@ header #arrow{
     background-color: rgba(255,251,248,255);
 }
 
+.client-testimonials h3,
+.client-testimonials h4{
+    font-family: "Fraunces";
+}
+
+.client-testimonials p,
+.client-testimonials h6{
+    font-family: "Barlow";
+}
+
 .client-testimonials h3{
     display: flex;
     justify-content: center;
     margin: 0px 0 100px 0;
-    font-family: "Fraunces";
     text-transform: uppercase;
     color: rgb(190, 188, 188);
     letter-spacing: 7px;
 }
 
 .client-testimonials p{
-    font-family: "Barlow";
     color: rgb(95, 94, 94);
     line-height: 1.6;
     margin: 50px 0 16px 0;
 }
 
 .client-testimonials h4{
-    font-family: "Fraunces";
     color: hsl(212, 27%, 19%);
     margin: 0 0 10px 0;
 }
 
 .client-testimonials h6{
-    font-family: "Barlow";
     font-size: 13px;
     color: rgba(178,178,178,255);
     margin: 0;
@@ -326,17 +319,17 @@ ul.testimonials-cards li{
     text-align: center;
 }
 
+ul.testimonials-cards img{
+    border-radius: 5em;
+    width: 80px;
+}
+
 .client-info{
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 132px;
-}
-
-ul.testimonials-cards img{
-    border-radius: 5em;
-    width: 80px;
 }
 
 .product-gallery{
@@ -347,8 +340,21 @@ ul.testimonials-cards img{
     width: 25%;
 }
 
-footer{
+footer, ul.services, ul.social-icons{
     display: flex;
+}
+
+#footer-logo, ul.services, ul.social-icons{
+    margin: auto;
+}
+
+ul.services, ul.social-icons{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+footer{
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -356,19 +362,8 @@ footer{
     padding: 60px 0;
 }
 
-#footer-logo, ul.services, ul.social-icons{
-    margin: auto;
-}
-
 #footer-logo{
     width: 150px;
-}
-
-ul.services, ul.social-icons{
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
 }
 
 ul.services{
@@ -408,18 +403,8 @@ ul.social-icons img:hover{
         width: 240px;
     }
 
-    #link-1, #link-2{
+    .description a{
         font-size: 14px;
-    }
-
-    #graphic-design-title, #photography-title{
-        font-size: 22px;
-    }
-
-    #graphic-design-text, #photography-text{
-        font-size: 13px;
-        width: 290px;
-        margin: 0 0 14px 0;
     }
 
     .design-text{
@@ -427,6 +412,16 @@ ul.social-icons img:hover{
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    .design-text h3{
+        font-size: 22px;
+    }
+
+    .design-text p{
+        font-size: 13px;
+        width: 290px;
+        margin: 0 0 14px 0;
     }
 
     .client-testimonials p{
@@ -456,7 +451,6 @@ ul.social-icons img:hover{
     .advantages img{
         order: -1;
         width: 100%;
-        
     }
 
     .description{
@@ -480,7 +474,7 @@ ul.social-icons img:hover{
         font-size: 15px;
     }
 
-    .wrapper h1, #link-1, #link-2{
+    .wrapper h1, .description a{
         margin: auto;
     }
 
@@ -488,7 +482,7 @@ ul.social-icons img:hover{
         width: 100%;
     }
     
-    #graphic-design-text, #photography-text{
+   .design-card p{
         font-size: 16px;
         width: 290px;
         margin: 0;
