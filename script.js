@@ -5,12 +5,13 @@ window.onload = function () {
     header.style.height = headerImage.offsetHeight + "px";
 };
 
+var iconHamburger = document.getElementById("icon-hamburger");
+var dropdownMenu = document.querySelector(".dropdown-menu");
+
 document.addEventListener("DOMContentLoaded", function() {
-    var iconHamburger = document.getElementById("icon-hamburger");
-    var dropdownMenu = document.querySelector(".dropdown-menu");
 
     iconHamburger.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevents default link behavior
+        event.preventDefault();
         if (dropdownMenu.style.display === "block"){
             dropdownMenu.style.display = "none";
         }
@@ -36,6 +37,10 @@ window.addEventListener('resize', function() {
         });
     }
     else{
+
+        if (dropdownMenu.style.display === "block"){
+            dropdownMenu.style.display = "none";
+        }
 
         var images = document.querySelectorAll('.product-gallery img');
 
