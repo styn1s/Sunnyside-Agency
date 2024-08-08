@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+    />
     <title>Sunnyside Agency</title>
   </head>
   <body>
@@ -18,7 +22,11 @@
           <li><a href="#" class="active">Contact</a></li>
         </ul>
 
-        <img id="icon-hamburger" src="./images/icon-hamburger.svg" alt="Menu button">
+        <img
+          id="icon-hamburger"
+          src="./images/icon-hamburger.svg"
+          alt="Menu button"
+        />
 
         <div class="dropdown-menu">
           <div id="triangle"></div>
@@ -30,44 +38,49 @@
           </ul>
         </div>
       </nav>
-
-      <h1>We are creatives</h1>
-
-      <img id="arrow" src="./images/icon-arrow-down.svg" alt="Arrow" />
     </header>
 
+    <main id="main-section">
+      <h1>We are creatives</h1>
+      <img id="arrow" src="./images/icon-arrow-down.svg" alt="Arrow" />
+    </main>
+
     <section class="advantages">
-      <div class="row">
+      <div class="row-wrapper">
         <div class="description">
-          <div class="wrapper">
-            <h1>Transform your brand</h1>
-            <p>
-              We are a full-service creative agency specializing in helping
-              brands grow fast. Engage your clients through compelling visuals
-              that do most of the marketing for you.
-            </p>
-            <a id="link-1" href="#">Learn more</a>
-          </div>
+          <h1>Transform your brand</h1>
+          <p>
+            We are a full-service creative agency specializing in helping brands
+            grow fast. Engage your clients through compelling visuals that do
+            most of the marketing for you.
+          </p>
+          <a id="link-1" href="#">Learn more</a>
         </div>
-        <img src="./images/desktop/image-transform.jpg" alt="Egg" />
+        <img
+          class="changeable-image"
+          src="./images/desktop/image-transform.jpg"
+          alt="Egg"
+        />
       </div>
 
-      <div class="row">
-        <img src="./images/desktop/image-stand-out.jpg" alt="Glass" />
+      <div class="row-wrapper">
+        <img
+          class="changeable-image"
+          src="./images/desktop/image-stand-out.jpg"
+          alt="Glass"
+        />
         <div class="description">
-          <div class="wrapper">
-            <h1>Stand out to the right audience</h1>
-            <p>
-              Using a collaborative formula of designers, researchers,
-              photographers, videographers, and copywriters, we'll build and
-              extend your brand in digital places.
-            </p>
-            <a id="link-2" href="#">Learn more</a>
-          </div>
+          <h1>Stand out to the right audience</h1>
+          <p>
+            Using a collaborative formula of designers, researchers,
+            photographers, videographers, and copywriters, we'll build and
+            extend your brand in digital places.
+          </p>
+          <a id="link-2" href="#">Learn more</a>
         </div>
       </div>
 
-      <div class="row">
+      <div class="row-wrapper">
         <div class="design-card" id="card-1">
           <div class="design-text">
             <h3 id="graphic-design-title">Graphic Design</h3>
@@ -130,10 +143,26 @@
     </section>
 
     <section class="product-gallery">
-      <img src="./images/desktop/image-gallery-milkbottles.jpg" alt="Milkbottles" />
-      <img src="./images/desktop/image-gallery-orange.jpg" alt="Orange" />
-      <img src="./images/desktop/image-gallery-cone.jpg" alt="Cone" />
-      <img src="./images/desktop/image-gallery-sugarcubes.jpg" alt="Sugarcubes" />
+      <img
+        class="changeable-image"
+        src="./images/desktop/image-gallery-milkbottles.jpg"
+        alt="Milkbottles"
+      />
+      <img
+        class="changeable-image"
+        src="./images/desktop/image-gallery-orange.jpg"
+        alt="Orange"
+      />
+      <img
+        class="changeable-image"
+        src="./images/desktop/image-gallery-cone.jpg"
+        alt="Cone"
+      />
+      <img
+        class="changeable-image"
+        src="./images/desktop/image-gallery-sugarcubes.jpg"
+        alt="Sugarcubes"
+      />
     </section>
 
     <footer>
@@ -146,21 +175,25 @@
 
       <ul class="social-icons">
         <li>
-          <a href="#"><img src="./images/icon-facebook.svg" alt="Facebook" /></a>
+          <a href="#"
+            ><img src="./images/icon-facebook.svg" alt="Facebook"
+          /></a>
         </li>
         <li>
-          <a href="#"><img src="./images/icon-instagram.svg" alt="Instagram" /></a>
+          <a href="#"
+            ><img src="./images/icon-instagram.svg" alt="Instagram"
+          /></a>
         </li>
         <li>
           <a href="#"><img src="./images/icon-twitter.svg" alt="Twitter" /></a>
         </li>
         <li>
-          <a href="#"><img src="./images/icon-pinterest.svg" alt="Pinterest" /></a>
+          <a href="#"
+            ><img src="./images/icon-pinterest.svg" alt="Pinterest"
+          /></a>
         </li>
       </ul>
     </footer>
-
-    
 
     <script src="script.js"></script>
   </body>
