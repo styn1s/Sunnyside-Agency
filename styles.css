@@ -49,7 +49,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 .nav-links {
@@ -125,7 +124,7 @@ nav {
   padding: 15px 0;
 }
 
-.mobile-menu ul li a {
+.mobile-menu a {
   text-decoration: none;
 }
 
@@ -137,7 +136,7 @@ nav {
   padding: 40px 0 50px 0;
 }
 
-.mobile-menu ul li a:not(.contact-btn-mobile) {
+.mobile-menu a:not(.contact-btn-mobile) {
   color: gray;
 }
 
@@ -195,7 +194,7 @@ nav {
   letter-spacing: 1px;
 }
 
-.description a::after {
+.learn-more-link::after {
   content: "";
   position: absolute;
   bottom: -3px;
@@ -207,19 +206,19 @@ nav {
   transition: 0.3s ease;
 }
 
-.learn-more-link::after {
+.row-wrapper:first-child .learn-more-link::after {
   background-color: rgba(249, 245, 191, 255);
 }
 
-.learn-more-link:hover::after {
+.row-wrapper:first-child .learn-more-link:hover::after {
   background-color: rgba(251, 217, 7, 255);
 }
 
-#link-2::after {
+.row-wrapper:nth-child(2) .learn-more-link::after {
   background-color: rgba(254, 216, 209, 255);
 }
 
-#link-2:hover::after {
+.row-wrapper:nth-child(2) .learn-more-link:hover::after {
   background-color: rgba(250, 110, 93, 255);
 }
 
@@ -228,10 +227,6 @@ nav {
   flex-direction: column;
   justify-content: center;
   padding: 0 120px;
-}
-
-.wrapper {
-  width: 50%;
 }
 
 .advantages img {
@@ -273,7 +268,7 @@ nav {
   z-index: 2;
 }
 
-.design-text h3 {
+.design-text h2 {
   font-family: "Fraunces";
   font-size: 1.5em;
 }
@@ -283,24 +278,24 @@ nav {
   line-height: 1.6;
 }
 
-#graphic-design-title {
+.design-card:first-child h2 {
   color: hsl(167, 40%, 24%);
   font-size: 2rem;
   font-weight: 900;
 }
 
-#photography-title {
+.design-card:last-child h2 {
   font-size: 2rem;
   color: hsl(198, 62%, 26%);
   font-weight: 900;
 }
 
-#graphic-design-text {
+.design-card:first-child p {
 	margin: 0;
   color: hsl(167, 40%, 24%);
 }
 
-#photography-text {
+.design-card:last-child p {
 	margin: 0;
   color: hsl(198, 62%, 26%);
 }
@@ -336,11 +331,6 @@ nav {
   margin: 0;
 }
 
-/*.client-info {
-  position: absolute;
-  top: 280px;
-}*/
-
 .client-testimonials h4 {
   color: hsl(212, 27%, 19%);
   margin: 0 0 10px 0;
@@ -352,7 +342,7 @@ nav {
   margin: 0;
 }
 
-ul.testimonials-cards {
+.testimonials-cards {
   margin: 0;
   padding: 0;
   display: flex;
@@ -361,7 +351,7 @@ ul.testimonials-cards {
   gap: 50px;
 }
 
-ul.testimonials-cards li {
+.testimonials-cards li {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -371,7 +361,7 @@ ul.testimonials-cards li {
   text-align: center;
 }
 
-ul.testimonials-cards img {
+.testimonials-cards img {
   border-radius: 5em;
   width: 80px;
 }
@@ -385,57 +375,51 @@ ul.testimonials-cards img {
 }
 
 footer,
-ul.services,
-ul.social-icons {
+.services,
+.social-icons {
   display: flex;
 }
 
-#footer-logo,
-ul.services,
-ul.social-icons {
-  margin: auto;
-}
-
-ul.services,
-ul.social-icons {
+.services,
+.social-icons {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
 footer {
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background-color: rgba(144, 212, 197, 255);
   padding: 60px 0;
+  background-color: rgba(144, 212, 197, 255);
 }
 
-#footer-logo {
+.footer-logo {
   width: 150px;
 }
 
-ul.services {
-  gap: 60px;
+.services {
   padding: 40px 0 80px 0px;
+  gap: 60px;
   box-sizing: border-box;
 }
 
-ul.services a {
+.services a {
   text-decoration: none;
   font-family: "Barlow";
   color: hsl(168, 34%, 41%);
 }
 
-ul.services a:hover {
+.services a:hover {
   color: #fff;
 }
 
-ul.social-icons {
+.social-icons {
   gap: 20px;
 }
 
-ul.social-icons img:hover {
+.social-icons img:hover {
   filter: brightness(0) invert(1);
 }
 
@@ -468,8 +452,8 @@ ul.social-icons img:hover {
     width: 21rem;
   }
 
-  #graphic-design-title,
-  #photography-title {
+  .design-card:first-child h2,
+  .design-card:last-child h2{
     font-size: 1.5rem;
   }
 
@@ -482,7 +466,7 @@ ul.social-icons img:hover {
     width: 16rem;
   }
 
-  ul.testimonials-cards {
+  .testimonials-cards {
     gap: 0
   }
   
@@ -519,6 +503,8 @@ ul.social-icons img:hover {
     display: block;
     padding-right: 25px;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
   }
 
   .row-wrapper {
@@ -538,7 +524,6 @@ ul.social-icons img:hover {
     padding: 70px 0;
     text-align: center;
     width: 80%;
-		
   }
 
   .description h1 {
@@ -553,7 +538,6 @@ ul.social-icons img:hover {
   }
 
   .description:last-child p {
-    
     box-sizing: border-box;
   }
 
