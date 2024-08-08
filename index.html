@@ -11,38 +11,38 @@
     <title>Sunnyside Agency</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <img id="logo" src="./images/logo.svg" alt="Logo" />
 
-        <ul class="navbar">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#" class="active">Contact</a></li>
+    <header role="banner">
+      <div class="header-logo">
+        <img src="./images/logo.svg" alt="Sunnyside header logo" loading="lazy" />
+      </div>
+      <nav role="navigation">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact" class="contact-btn">Contact</a></li>
         </ul>
-
         <img
-          id="icon-hamburger"
+          class="burger-btn"
           src="./images/icon-hamburger.svg"
-          alt="Menu button"
+          alt="Burger button"
         />
-
-        <div class="dropdown-menu">
-          <div id="triangle"></div>
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#" class="dropdown-active">Contact</a></li>
-          </ul>
-        </div>
       </nav>
+      <section class="mobile-menu">
+        <div class="triangle"></div>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact" class="contact-btn-mobile">Contact</a></li>
+        </ul>
+      </section>
     </header>
 
-    <main id="main-section">
+    <main role="main" id="main-section">
       <h1>We are creatives</h1>
-      <img id="arrow" src="./images/icon-arrow-down.svg" alt="Arrow" />
+      <img class="arrow" src="./images/icon-arrow-down.svg" alt="White arrow image" loading="lazy"/>
     </main>
 
     <section class="advantages">
@@ -54,7 +54,7 @@
             grow fast. Engage your clients through compelling visuals that do
             most of the marketing for you.
           </p>
-          <a id="link-1" href="#">Learn more</a>
+          <a class="learn-more-link" href="#learn-more">Learn more</a>
         </div>
         <img
           class="changeable-image"
@@ -76,7 +76,7 @@
             photographers, videographers, and copywriters, we'll build and
             extend your brand in digital places.
           </p>
-          <a id="link-2" href="#">Learn more</a>
+          <a id="link-2" href="#learn-more">Learn more</a>
         </div>
       </div>
 
@@ -168,9 +168,9 @@
     <footer>
       <img id="footer-logo" src="./images/footer-logo.svg" alt="Logo" />
       <ul class="services">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
       </ul>
 
       <ul class="social-icons">

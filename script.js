@@ -1,5 +1,5 @@
-var iconHamburger = document.getElementById("icon-hamburger");
-var dropdownMenu = document.querySelector(".dropdown-menu");
+var burgerBtn = document.querySelector(".burger-btn");
+var dropdownMenu = document.querySelector(".mobile-menu");
 
 function updateImages() {
   var windowWidth = window.innerWidth;
@@ -9,7 +9,7 @@ function updateImages() {
   var photographyDesignCard = document.getElementById("card-2");
 
   if (windowWidth <= 768) {
-    if (windowWidth <= 490) {
+    if (windowWidth <= 535) {
       changeToMobileImages(mainSection, graphicDesignCard, photographyDesignCard);
     } else {
       changeToDesktopImages(mainSection, graphicDesignCard, photographyDesignCard);
@@ -72,5 +72,5 @@ function changeToDesktopImages(mainSection, graphicDesignCard, photographyDesign
 document.addEventListener("DOMContentLoaded", function () {
   updateImages();
   window.addEventListener("resize", updateImages);
-  iconHamburger.addEventListener("click", toggleMobileMenu);
+  burgerBtn.addEventListener("click", toggleMobileMenu);
 });

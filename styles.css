@@ -1,19 +1,31 @@
 html,
 body {
   margin: 0;
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
+  height: auto;
+  overflow-x: hidden;
 }
 
 header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px 0;
   background-color: rgba(61, 190, 255, 255);
+  box-sizing: content-box;
+}
+
+.header-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
   position: relative;
   text-align: center;
-  height: 600px;
+  height: 650px;
   background-image: url("./images/desktop/image-header.jpg");
   background-size: cover;
   background-position: center bottom;
@@ -28,40 +40,35 @@ main h1 {
   display: flex;
   justify-content: center;
   letter-spacing: 10px;
-  margin-top: 0;
-  padding-top: 70px;
-}
-
-main #arrow-wrapper {
-  margin-top: 50px;
+  margin: 0;
+  padding: 100px 0 74px 0;
 }
 
 nav {
   position: relative;
-  margin: 0 50px 0 50px;
-  padding: 30px 0;
-  height: 63px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
-.navbar {
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
   right: 0;
-  list-style-type: none;
+  margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
-.navbar li {
-  display: inline;
-  padding-left: 40px;
-}
-
-.navbar li:first-child {
+.nav-links li:first-child {
   padding-left: 0;
 }
 
-.navbar li a {
+.nav-links li a {
   display: inline-block;
   text-decoration: none;
   color: white;
@@ -69,7 +76,7 @@ nav {
   font-family: "Barlow";
 }
 
-.navbar li a.active {
+.nav-links li .contact-btn {
   font-family: "Fraunces";
   font-weight: bold;
   color: black;
@@ -80,25 +87,28 @@ nav {
   transition: 0.3s ease;
 }
 
-.navbar li a.active:hover {
+.nav-links li .contact-btn:hover {
   background-color: rgba(106, 210, 252, 255);
   color: white;
   transition: 0.3s ease;
 }
 
-#icon-hamburger {
+.burger-btn {
   display: none;
+  
 }
 
-.dropdown-menu {
-  display: none;
+.mobile-menu {
   position: absolute;
-  top: 100%;
+  display: none;
+  top: 120px;
   width: 100%;
+  padding: 0 25px;
   z-index: 2;
+  box-sizing: border-box;
 }
 
-.dropdown-menu ul {
+.mobile-menu ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,28 +120,28 @@ nav {
   font-family: "Barlow";
 }
 
-.dropdown-menu ul li {
+.mobile-menu ul li {
   display: block;
   padding: 15px 0;
 }
 
-.dropdown-menu ul li:first-child {
-  padding-top: 30px;
-}
-
-.dropdown-menu ul li:last-child {
-  padding: 40px 0 50px 0;
-}
-
-.dropdown-menu ul li a {
+.mobile-menu ul li a {
   text-decoration: none;
 }
 
-.dropdown-menu ul li a:not(.dropdown-active) {
+.mobile-menu ul li:first-child {
+  padding-top: 30px;
+}
+
+.mobile-menu ul li:last-child {
+  padding: 40px 0 50px 0;
+}
+
+.mobile-menu ul li a:not(.contact-btn-mobile) {
   color: gray;
 }
 
-.dropdown-active {
+.contact-btn-mobile {
   font-family: "Fraunces";
   font-weight: bold;
   text-transform: uppercase;
@@ -141,9 +151,9 @@ nav {
   border-radius: 2em;
 }
 
-#triangle {
+.triangle {
   position: inherit;
-  right: 0;
+  right: 25px;
   top: -30px;
   width: 0;
   height: 0;
@@ -165,7 +175,7 @@ nav {
 .description h1 {
   margin: 0;
   font-size: 2.5em;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .description p {
@@ -197,11 +207,11 @@ nav {
   transition: 0.3s ease;
 }
 
-#link-1::after {
+.learn-more-link::after {
   background-color: rgba(249, 245, 191, 255);
 }
 
-#link-1:hover::after {
+.learn-more-link:hover::after {
   background-color: rgba(251, 217, 7, 255);
 }
 
@@ -430,20 +440,17 @@ ul.social-icons img:hover {
 }
 
 @media screen and (max-width: 1024px) {
-  header h1 {
-    font-size: 32px;
-  }
 
   .description {
     padding: 50px 100px;
   }
 
   .description h1 {
-    font-size: 1.3em;
+    font-size: 1.6em;
   }
 
   .description p {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .description a {
@@ -472,7 +479,7 @@ ul.social-icons img:hover {
 
   .client-testimonials p {
     font-size: 15px;
-    width: 13rem;
+    width: 16rem;
   }
 
   ul.testimonials-cards {
@@ -482,26 +489,35 @@ ul.social-icons img:hover {
 }
 
 @media screen and (max-width: 768px) {
-  main {
-    height: 430px;
+  header {
+    padding: 35px 0 0;
   }
 
+  .header-logo {
+    padding-left: 25px;
+  }
+
+  main {
+    height: 470px;
+  }
 
   main h1 {
     font-size: 2.2rem;
+    padding: 80px 0 50px 0;
   }
 
   nav {
-    margin: 0 30px;
-    padding: 20px 0;
+    margin: 0;
+    padding: 0;
   }
 
-  ul.navbar {
+  .nav-links {
     display: none;
   }
 
-  #icon-hamburger {
+  .burger-btn {
     display: block;
+    padding-right: 25px;
     cursor: pointer;
   }
 
