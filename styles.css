@@ -5,61 +5,46 @@ body {
   overflow-x: hidden;
 }
 
-header {
+header,
+nav {
   position: relative;
+}
+
+header,
+.header-logo,
+nav,
+.nav-links {
   display: flex;
+  align-items: center;
+}
+
+header {
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   padding: 30px 50px 0;
-  background-color: rgba(61, 190, 255, 255);
   box-sizing: content-box;
+  background-color: rgba(61, 190, 255, 255);
 }
 
 .header-logo {
-  display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-main {
-  position: relative;
-  text-align: center;
-  height: 650px;
-  background-image: url("./images/desktop/image-header.jpg");
-  background-size: cover;
-  background-position: center bottom;
-}
-
-main h1 {
-  text-transform: uppercase;
-  font-family: "Fraunces";
-  font-size: 3em;
-  font-weight: 900;
-  color: white;
-  display: flex;
-  justify-content: center;
-  letter-spacing: 10px;
-  margin: 0;
-  padding: 100px 0 74px 0;
 }
 
 nav {
-  position: relative;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
+.burger-btn {
+  display: none;
+}
+
 .nav-links {
-  display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  gap: 40px;
   right: 0;
   margin: 0;
   padding: 0;
+  gap: 40px;
   list-style-type: none;
 }
 
@@ -68,33 +53,28 @@ nav {
 }
 
 .nav-links li a {
-  display: inline-block;
-  text-decoration: none;
-  color: white;
+  display: block;
   font-size: 18px;
   font-family: "Barlow";
+  text-decoration: none;
+  color: white;
 }
 
 .nav-links li .contact-btn {
-  font-family: "Fraunces";
-  font-weight: bold;
-  color: black;
-  background-color: white;
   padding: 20px 30px;
   border-radius: 2em;
+  font-family: "Fraunces";
+  font-weight: bold;
   text-transform: uppercase;
+  color: black;
+  background-color: white;
   transition: 0.3s ease;
 }
 
 .nav-links li .contact-btn:hover {
-  background-color: rgba(106, 210, 252, 255);
   color: white;
+  background-color: rgba(106, 210, 252, 255);
   transition: 0.3s ease;
-}
-
-.burger-btn {
-  display: none;
-  
 }
 
 .mobile-menu {
@@ -103,8 +83,8 @@ nav {
   top: 120px;
   width: 100%;
   padding: 0 25px;
-  z-index: 2;
   box-sizing: border-box;
+  z-index: 2;
 }
 
 .mobile-menu ul {
@@ -114,9 +94,9 @@ nav {
   align-items: center;
   margin: 0;
   padding: 0;
+  font-family: "Barlow";
   list-style-type: none;
   background-color: #fff;
-  font-family: "Barlow";
 }
 
 .mobile-menu ul li {
@@ -140,35 +120,67 @@ nav {
   color: gray;
 }
 
-.contact-btn-mobile {
-  font-family: "Fraunces";
-  font-weight: bold;
-  text-transform: uppercase;
-  color: black;
-  background-color: rgba(251, 214, 1, 255);
-  padding: 20px 30px;
-  border-radius: 2em;
-}
-
 .triangle {
   position: inherit;
-  right: 25px;
   top: -30px;
+  right: 25px;
   width: 0;
   height: 0;
   border-bottom: 50px solid white;
   border-left: 50px solid transparent;
 }
 
-.row-wrapper {
-  width: 100%;
+.contact-btn-mobile {
+  padding: 20px 30px;
+  border-radius: 2em;
+  font-family: "Fraunces";
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  background-color: rgba(251, 214, 1, 255);
+}
+
+main {
+  position: relative;
+  height: 650px;
+  text-align: center;
+  background-image: url("./images/desktop/image-header.jpg");
+  background-size: cover;
+  background-position: center bottom;
+}
+
+main h1 {
   display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 100px 0 74px 0;
+  font: 900 3em "Fraunces";
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: white;
+}
+
+.advantages img {
+  width: 50%;
+}
+
+.row-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 0 120px;
 }
 
 .description h1,
 .description a {
-  color: hsl(212, 27%, 19%);
   font-family: "Fraunces";
+  color: hsl(212, 27%, 19%);
 }
 
 .description h1 {
@@ -178,19 +190,19 @@ nav {
 }
 
 .description p {
-  font-family: "Barlow";
-  color: hsl(232, 10%, 55%);
   margin: 40px 0 30px 0;
+  font-family: "Barlow";
   line-height: 1.6rem;
+  color: hsl(232, 10%, 55%);
 }
 
 .description a {
   position: relative;
   display: block;
   width: fit-content;
+  font-weight: 900;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 900;
   letter-spacing: 1px;
 }
 
@@ -202,8 +214,8 @@ nav {
   width: 113%;
   height: 10px;
   border-radius: 5px;
-  z-index: -1;
   transition: 0.3s ease;
+  z-index: -1;
 }
 
 .row-wrapper:first-child .learn-more-link::after {
@@ -220,21 +232,6 @@ nav {
 
 .row-wrapper:nth-child(2) .learn-more-link:hover::after {
   background-color: rgba(250, 110, 93, 255);
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 120px;
-}
-
-.advantages img {
-  width: 50%;
-}
-
-.description {
-  width: 100%;
 }
 
 .design-card {
@@ -269,8 +266,8 @@ nav {
 }
 
 .design-text h2 {
-  font-family: "Fraunces";
   font-size: 1.5em;
+  font-family: "Fraunces";
 }
 
 .design-text p {
@@ -279,15 +276,15 @@ nav {
 }
 
 .design-card:first-child h2 {
-  color: hsl(167, 40%, 24%);
   font-size: 2rem;
   font-weight: 900;
+  color: hsl(167, 40%, 24%);
 }
 
 .design-card:last-child h2 {
   font-size: 2rem;
-  color: hsl(198, 62%, 26%);
   font-weight: 900;
+  color: hsl(198, 62%, 26%);
 }
 
 .design-card:first-child p {
@@ -305,13 +302,37 @@ nav {
   background-color: rgba(255, 251, 248, 255);
 }
 
+.testimonials-cards {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  gap: 50px;
+  list-style-type: none;
+}
+
+.testimonials-cards li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+  width: 19.5rem;
+}
+
+.testimonials-cards img {
+  width: 80px;
+  border-radius: 5em;
+}
+
 .client-testimonials h3,
-.client-testimonials h4 {
+.client-info h4 {
   font-family: "Fraunces";
 }
 
-.client-testimonials p,
-.client-testimonials h6 {
+.testimonials-cards p,
+.client-info h6 {
   font-family: "Barlow";
 }
 
@@ -321,49 +342,25 @@ nav {
   align-items: center;
   margin: 0px 0 100px 0;
   text-transform: uppercase;
-  color: rgb(190, 188, 188);
   letter-spacing: 7px;
+  color: rgb(190, 188, 188);
 }
 
-.client-testimonials p {
-  color: rgb(95, 94, 94);
-  line-height: 1.6;
+.testimonials-cards p {
   margin: 0;
+  line-height: 1.6;
+  color: rgb(95, 94, 94);
 }
 
-.client-testimonials h4 {
-  color: hsl(212, 27%, 19%);
+.client-info h4 {
   margin: 0 0 10px 0;
+  color: hsl(212, 27%, 19%);
 }
 
-.client-testimonials h6 {
+.client-info h6 {
+  margin: 0;
   font-size: 13px;
   color: rgba(178, 178, 178, 255);
-  margin: 0;
-}
-
-.testimonials-cards {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  gap: 50px;
-}
-
-.testimonials-cards li {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 50px;
-  width: 19.5rem;
-  text-align: center;
-}
-
-.testimonials-cards img {
-  border-radius: 5em;
-  width: 80px;
 }
 
 .product-gallery {
@@ -406,8 +403,8 @@ footer {
 }
 
 .services a {
-  text-decoration: none;
   font-family: "Barlow";
+  text-decoration: none;
   color: hsl(168, 34%, 41%);
 }
 
@@ -445,6 +442,11 @@ footer {
     height: 550px;
   }
 
+  .design-card:first-child h2,
+  .design-card:last-child h2{
+    font-size: 1.5rem;
+  }
+
   .design-text {
     display: flex;
     flex-direction: column;
@@ -452,22 +454,17 @@ footer {
     width: 21rem;
   }
 
-  .design-card:first-child h2,
-  .design-card:last-child h2{
-    font-size: 1.5rem;
-  }
-
   .design-text p {
     margin: 0;
   }
 
-  .client-testimonials p {
-    font-size: 15px;
-    width: 16rem;
-  }
-
   .testimonials-cards {
     gap: 0
+  }
+
+  .testimonials-cards p {
+    font-size: 15px;
+    width: 16rem;
   }
   
 }
@@ -481,22 +478,9 @@ footer {
     padding-left: 25px;
   }
 
-  main {
-    height: 470px;
-  }
-
-  main h1 {
-    font-size: 2.2rem;
-    padding: 80px 0 50px 0;
-  }
-
   nav {
     margin: 0;
     padding: 0;
-  }
-
-  .nav-links {
-    display: none;
   }
 
   .burger-btn {
@@ -507,15 +491,28 @@ footer {
     border: none;
   }
 
-  .row-wrapper {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .nav-links {
+    display: none;
+  }
+
+  main {
+    height: 470px;
+  }
+
+  main h1 {
+    font-size: 2.2rem;
+    padding: 80px 0 50px 0;
   }
 
   .advantages img {
     order: -1;
     width: 100%;
+  }
+
+  .row-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .description {
@@ -539,11 +536,6 @@ footer {
 
   .description:last-child p {
     box-sizing: border-box;
-  }
-
-  .wrapper h1,
-  .description a {
-    margin: auto;
   }
 
   .design-card {
@@ -570,16 +562,16 @@ footer {
     margin: 0 0 50px;
   }
 
-  .client-testimonials p {
-    margin: 0;
-  }
-
-  ul.testimonials-cards {
+  .testimonials-cards {
     flex-direction: column;
     gap: 70px;
   }
 
-  ul.testimonials-cards li {
+  .testimonials-cards p {
+    margin: 0;
+  }
+
+  .testimonials-cards li {
     display: flex;
     flex-direction: column;
     justify-content: center;
