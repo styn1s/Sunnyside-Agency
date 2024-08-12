@@ -1,72 +1,63 @@
+var config = {
+  desktopImages: {
+    mainSection: "./images/desktop/image-header.jpg",
+    graphicDesignCard: "./images/desktop/image-graphic-design.jpg",
+    photographyDesignCard: "./images/desktop/image-photography.jpg",
+  },
+  mobileImages: {
+    mainSection: "./images/mobile/image-header.jpg",
+    graphicDesignCard: "./images/mobile/image-graphic-design.jpg",
+    photographyDesignCard: "./images/mobile/image-photography.jpg",
+  },
+};
+
 var burgerBtn = document.querySelector(".burger-btn");
 var dropdownMenu = document.querySelector(".mobile-menu");
 
 function updateImages() {
   var windowWidth = window.innerWidth;
+  var isMobile = windowWidth <= 768;
   var images = document.querySelectorAll(".changeable-image");
+
+  var imageSet = isMobile ? config.mobileImages : config.desktopImages;
+
+  updateBackgroundImages(imageSet);
+  updateGalleryImages(images, isMobile);
+
+  if (!isMobile && dropdownMenu.style.display === "block") {
+    dropdownMenu.style.display = "none";
+  }
+}
+
+function toggleMobileMenu() {
+  dropdownMenu.style.display =
+    dropdownMenu.style.display === "block" ? "none" : "block";
+}
+
+function updateGalleryImages(images, isMobile) {
+  images.forEach((image) => {
+    var imageName = image.src.split("/").pop();
+    image.src = `./images/${isMobile ? "mobile" : "desktop"}/${imageName}`;
+  });
+}
+
+function updateBackgroundImages(imageSet) {
   var mainSection = document.getElementById("main-section");
   var graphicDesignCard = document.getElementById("card-1");
   var photographyDesignCard = document.getElementById("card-2");
 
-  if (windowWidth <= 768) {
-    if (windowWidth <= 535) {
-      changeToMobileImages(mainSection, graphicDesignCard, photographyDesignCard);
-    } else {
-      changeToDesktopImages(mainSection, graphicDesignCard, photographyDesignCard);
-    }
-
-    images.forEach(function (image, index) {
-      var imageName = image.src.split("/").pop();
-      var mobileImagePath = "./images/mobile/" + imageName;
-      image.src = mobileImagePath;
-    });
-  } else {
-    if (dropdownMenu.style.display === "block") {
-      dropdownMenu.style.display = "none";
-    }
-
-    images.forEach(function (image, index) {
-      var imageName = image.src.split("/").pop();
-      var desktopImagePath = "./images/desktop/" + imageName;
-      image.src = desktopImagePath;
-    });
-  }
-}
-
-function toggleMobileMenu(event) {
-  if (dropdownMenu.style.display === "block") {
-    dropdownMenu.style.display = "none";
-  } else {
-    dropdownMenu.style.display = "block";
-  }
+  if (mainSection) changeBackgroundImage(mainSection, imageSet.mainSection);
+  if (graphicDesignCard)
+    changeBackgroundImage(graphicDesignCard, imageSet.graphicDesignCard);
+  if (photographyDesignCard)
+    changeBackgroundImage(
+      photographyDesignCard,
+      imageSet.photographyDesignCard
+    );
 }
 
 function changeBackgroundImage(element, imageUrl) {
   element.style.backgroundImage = `url(${imageUrl})`;
-}
-
-function changeToMobileImages(mainSection, graphicDesignCard, photographyDesignCard) {
-  changeBackgroundImage(mainSection, "./images/mobile/image-header.jpg");
-  changeBackgroundImage(
-    graphicDesignCard,
-    "./images/mobile/image-graphic-design.jpg"
-  );
-  changeBackgroundImage(
-    photographyDesignCard,
-    "./images/mobile/image-photography.jpg"
-  );
-}
-
-function changeToDesktopImages(mainSection, graphicDesignCard, photographyDesignCard) {
-  changeBackgroundImage(mainSection, "./images/desktop/image-header.jpg");
-  changeBackgroundImage(
-    graphicDesignCard,
-    "./images/desktop/image-graphic-design.jpg"
-  );
-  changeBackgroundImage(
-    photographyDesignCard,
-    "./images/desktop/image-photography.jpg"
-  );
 }
 
 document.addEventListener("DOMContentLoaded", function () {
