@@ -435,6 +435,10 @@ footer {
     padding: 0 300px;
   }
 
+  .description p {
+    width: 70%;
+  }
+
   .design-card {
     height: 1000px;
   }
