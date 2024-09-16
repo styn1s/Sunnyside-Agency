@@ -1,18 +1,18 @@
 var config = {
   desktopImages: {
-    mainSection: "./images/desktop/image-header.jpg",
+    heroSection: "./images/desktop/image-header.jpg",
     graphicDesignCard: "./images/desktop/image-graphic-design.jpg",
     photographyDesignCard: "./images/desktop/image-photography.jpg",
   },
   mobileImages: {
-    mainSection: "./images/mobile/image-header.jpg",
+    heroSection: "./images/mobile/image-header.jpg",
     graphicDesignCard: "./images/mobile/image-graphic-design.jpg",
     photographyDesignCard: "./images/mobile/image-photography.jpg",
   },
 };
 
-var burgerBtn = document.querySelector(".burger-btn");
-var dropdownMenu = document.querySelector(".mobile-menu");
+const burgerBtn = document.querySelector(".burger-btn");
+const mobileMenu = document.querySelector(".mobile-menu");
 
 function updateImages() {
   var windowWidth = window.innerWidth;
@@ -20,18 +20,21 @@ function updateImages() {
   var images = document.querySelectorAll(".changeable-image");
 
   var imageSet = isMobile ? config.mobileImages : config.desktopImages;
-
+  
   updateBackgroundImages(imageSet);
   updateGalleryImages(images, isMobile);
 
-  if (!isMobile && dropdownMenu.style.display === "block") {
-    dropdownMenu.style.display = "none";
+  if (!isMobile && mobileMenu.style.display === "block") {
+    mobileMenu.style.display = "none";
   }
 }
 
 function toggleMobileMenu() {
-  dropdownMenu.style.display =
-    dropdownMenu.style.display === "block" ? "none" : "block";
+  if (mobileMenu.style.display === "block") {
+    mobileMenu.style.display = "none";
+  } else {
+    mobileMenu.style.display = "block";
+  }
 }
 
 function updateGalleryImages(images, isMobile) {
@@ -42,11 +45,11 @@ function updateGalleryImages(images, isMobile) {
 }
 
 function updateBackgroundImages(imageSet) {
-  var mainSection = document.getElementById("main-section");
+  var heroSection = document.querySelector(".hero");
   var graphicDesignCard = document.getElementById("card-1");
   var photographyDesignCard = document.getElementById("card-2");
 
-  if (mainSection) changeBackgroundImage(mainSection, imageSet.mainSection);
+  if (heroSection) changeBackgroundImage(heroSection, imageSet.heroSection);
   if (graphicDesignCard)
     changeBackgroundImage(graphicDesignCard, imageSet.graphicDesignCard);
   if (photographyDesignCard)
@@ -61,7 +64,7 @@ function changeBackgroundImage(element, imageUrl) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  updateImages();
+  /*updateImages();*/
   window.addEventListener("resize", updateImages);
   burgerBtn.addEventListener("click", toggleMobileMenu);
 });

@@ -22,33 +22,44 @@
     <title>Sunnyside Agency</title>
   </head>
   <body>
-    <header role="banner">
-      <div class="header-logo">
+    <header class="header">
+      <div class="header__logo">
         <img
           src="./images/logo.svg"
           alt="Sunnyside header logo"
           loading="lazy"
         />
       </div>
-      <nav role="navigation" aria-label="Main navigation">
+      <nav class="header__nav" role="Main navigation">
         <button
+          class="nav__burger-btn"
           aria-label="Open navigation menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
-          class="burger-btn"
         >
           <img src="./images/icon-hamburger.svg" alt="Burger menu button" />
         </button>
-        <ul class="nav-links">
-          <li><a href="#about" aria-label="About section">About</a></li>
-          <li>
-            <a href="#services" aria-label="Services section">Services</a>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#about" class="nav__link" aria-label="About section"
+              >About</a
+            >
           </li>
-          <li>
-            <a href="#projects" aria-label="Projects section">Projects</a>
+          <li class="nav__item">
+            <a href="#services" class="nav__link" aria-label="Services section"
+              >Services</a
+            >
           </li>
-          <li>
-            <a href="#contact" aria-label="Contact section" class="contact-btn"
+          <li class="nav__item">
+            <a href="#projects" class="nav__link" aria-label="Projects section"
+              >Projects</a
+            >
+          </li>
+          <li class="nav__item">
+            <a
+              href="#contact"
+              class="nav__link nav__link--contact"
+              aria-label="Contact section"
               >Contact</a
             >
           </li>
@@ -56,21 +67,23 @@
       </nav>
       <section
         role="navigation"
-        id="mobile-menu"
         class="mobile-menu"
-        aria-label="Mobile menu"
+        id="mobile-menu"
+        aria-label="Mobile navigation"
         aria-hidden="true"
       >
-        <div class="triangle"></div>
-        <ul>
-          <li><a href="#about" aria-label="About section">About</a></li>
-          <li>
+        <div class="mobile-menu__triangle"></div>
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a href="#about" aria-label="About section">About</a>
+          </li>
+          <li class="mobile-menu__item">
             <a href="#services" aria-label="Services section">Services</a>
           </li>
-          <li>
+          <li class="mobile-menu__item">
             <a href="#projects" aria-label="Projects section">Projects</a>
           </li>
-          <li>
+          <li class="mobile-menu__item">
             <a
               href="#contact"
               aria-label="Contact section"
@@ -82,151 +95,158 @@
       </section>
     </header>
 
-    <main role="main" id="main-section">
-      <h1>We are creatives</h1>
-      <img
-        class="arrow"
-        src="./images/icon-arrow-down.svg"
-        alt="White arrow image"
-        loading="lazy"
-      />
+    <main>
+      <section class="hero">
+        <h1>We are creatives</h1>
+        <img
+          class="arrow"
+          src="./images/icon-arrow-down.svg"
+          alt="White arrow image"
+          loading="lazy"
+        />
+      </section>
+
+      <section class="advantages" aria-labelledby="advantages-heading">
+        <div class="row-wrapper">
+          <img
+            class="changeable-image"
+            src="./images/desktop/image-transform.jpg"
+            alt="An egg representing transformation"
+            loading="lazy"
+          />
+          <div class="description">
+            <h1 id="advantages-heading">Transform your brand</h1>
+            <p>
+              We are a full-service creative agency specializing in helping
+              brands grow fast. Engage your clients through compelling visuals
+              that do most of the marketing for you.
+            </p>
+            <a class="relative learn-more-link" href="#learn-more"
+              >Learn more</a
+            >
+          </div>
+        </div>
+        <div class="row-wrapper">
+          <img
+            class="changeable-image"
+            src="./images/desktop/image-stand-out.jpg"
+            alt="A red glass representing standing out"
+            loading="lazy"
+          />
+          <div class="description">
+            <h1 id="advantages-heading">Stand out to the right audience</h1>
+            <p>
+              Using a collaborative formula of designers, researchers,
+              photographers, videographers, and copywriters, we'll build and
+              extend your brand in digital places.
+            </p>
+            <a class="learn-more-link" href="#learn-more">Learn more</a>
+          </div>
+        </div>
+        <div class="row-wrapper">
+          <div class="design-card" id="card-1" aria-labelledby="card-1-heading">
+            <div class="design-text">
+              <h2 id="card-1-heading">Graphic Design</h2>
+              <p>
+                Great design makes you memorable. We deliver artwork that
+                underscores your brand message and captures potential clients'
+                attention.
+              </p>
+            </div>
+          </div>
+          <div class="design-card" id="card-2" aria-labelledby="card-2-heading">
+            <div class="design-text">
+              <h2 id="card-2-heading">Photography</h2>
+              <p>
+                Increase your credibility by getting the most stunning,
+                high-quality photos that improve your business image.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="client-testimonials"
+        aria-labelledby="testimonials-heading"
+      >
+        <h3 id="testimonials-heading">Client testimonials</h3>
+        <ul class="testimonials-cards">
+          <li class="card">
+            <img
+              src="./images/image-emily.jpg"
+              alt="Portrait of Emily, Marketing Director"
+              loading="lazy"
+            />
+            <p>
+              We put our trust in Sunnyside and they delivered, making sure our
+              needs were met and deadlines were always hit.
+            </p>
+            <div class="client-info">
+              <h4>Emily R.</h4>
+              <h6>Marketing Director</h6>
+            </div>
+          </li>
+          <li class="card">
+            <img
+              src="./images/image-thomas.jpg"
+              alt="Portrait of Thomas, Chief Operating Officer"
+              loading="lazy"
+            />
+            <p>
+              Sunnyside's enthusiasm coupled with their keen interest in our
+              brand's success made it a satisfying and enjoyable experience.
+            </p>
+            <div class="client-info">
+              <h4>Thomas S.</h4>
+              <h6>Chief Operating Officer</h6>
+            </div>
+          </li>
+          <li class="card">
+            <img
+              src="./images/image-jennie.jpg"
+              alt="Portrait of Jennie, Business Owner"
+              loading="lazy"
+            />
+            <p>
+              Incredible end result! Our sales increased over 400% when we
+              worked with Sunnyside. Highly recommended!
+            </p>
+            <div class="client-info">
+              <h4>Jennie F.</h4>
+              <h6>Business Owner</h6>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="product-gallery" aria-label="Product gallery">
+        <img
+          class="changeable-image"
+          src="./images/desktop/image-gallery-milkbottles.jpg"
+          alt="Four milk bottles in a row"
+          loading="lazy"
+        />
+        <img
+          class="changeable-image"
+          src="./images/desktop/image-gallery-orange.jpg"
+          alt="An orange slice on a bright background"
+          loading="lazy"
+        />
+        <img
+          class="changeable-image"
+          src="./images/desktop/image-gallery-cone.jpg"
+          alt="A cone standing on its tip"
+          loading="lazy"
+        />
+        <img
+          class="changeable-image"
+          src="./images/desktop/image-gallery-sugarcubes.jpg"
+          alt="Stacked sugar cubes"
+          loading="lazy"
+        />
+      </section>
     </main>
-
-    <section class="advantages" aria-labelledby="advantages-heading">
-      <div class="row-wrapper">
-        <img
-          class="changeable-image"
-          src="./images/desktop/image-transform.jpg"
-          alt="An egg representing transformation"
-          loading="lazy"
-        />
-        <div class="description">
-          <h1 id="advantages-heading">Transform your brand</h1>
-          <p>
-            We are a full-service creative agency specializing in helping brands
-            grow fast. Engage your clients through compelling visuals that do
-            most of the marketing for you.
-          </p>
-          <a class="relative learn-more-link" href="#learn-more">Learn more</a>
-        </div>
-      </div>
-      <div class="row-wrapper">
-        <img
-          class="changeable-image"
-          src="./images/desktop/image-stand-out.jpg"
-          alt="A red glass representing standing out"
-          loading="lazy"
-        />
-        <div class="description">
-          <h1 id="advantages-heading">Stand out to the right audience</h1>
-          <p>
-            Using a collaborative formula of designers, researchers,
-            photographers, videographers, and copywriters, we'll build and
-            extend your brand in digital places.
-          </p>
-          <a class="learn-more-link" href="#learn-more">Learn more</a>
-        </div>
-      </div>
-      <div class="row-wrapper">
-        <div class="design-card" id="card-1" aria-labelledby="card-1-heading">
-          <div class="design-text">
-            <h2 id="card-1-heading">Graphic Design</h2>
-            <p>
-              Great design makes you memorable. We deliver artwork that
-              underscores your brand message and captures potential clients'
-              attention.
-            </p>
-          </div>
-        </div>
-        <div class="design-card" id="card-2" aria-labelledby="card-2-heading">
-          <div class="design-text">
-            <h2 id="card-2-heading">Photography</h2>
-            <p>
-              Increase your credibility by getting the most stunning,
-              high-quality photos that improve your business image.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="client-testimonials" aria-labelledby="testimonials-heading">
-      <h3 id="testimonials-heading">Client testimonials</h3>
-      <ul class="testimonials-cards">
-        <li class="card">
-          <img
-            src="./images/image-emily.jpg"
-            alt="Portrait of Emily, Marketing Director"
-            loading="lazy"
-          />
-          <p>
-            We put our trust in Sunnyside and they delivered, making sure our
-            needs were met and deadlines were always hit.
-          </p>
-          <div class="client-info">
-            <h4>Emily R.</h4>
-            <h6>Marketing Director</h6>
-          </div>
-        </li>
-        <li class="card">
-          <img
-            src="./images/image-thomas.jpg"
-            alt="Portrait of Thomas, Chief Operating Officer"
-            loading="lazy"
-          />
-          <p>
-            Sunnyside's enthusiasm coupled with their keen interest in our
-            brand's success made it a satisfying and enjoyable experience.
-          </p>
-          <div class="client-info">
-            <h4>Thomas S.</h4>
-            <h6>Chief Operating Officer</h6>
-          </div>
-        </li>
-        <li class="card">
-          <img
-            src="./images/image-jennie.jpg"
-            alt="Portrait of Jennie, Business Owner"
-            loading="lazy"
-          />
-          <p>
-            Incredible end result! Our sales increased over 400% when we worked
-            with Sunnyside. Highly recommended!
-          </p>
-          <div class="client-info">
-            <h4>Jennie F.</h4>
-            <h6>Business Owner</h6>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <section class="product-gallery" aria-label="Product gallery">
-      <img
-        class="changeable-image"
-        src="./images/desktop/image-gallery-milkbottles.jpg"
-        alt="Four milk bottles in a row"
-        loading="lazy"
-      />
-      <img
-        class="changeable-image"
-        src="./images/desktop/image-gallery-orange.jpg"
-        alt="An orange slice on a bright background"
-        loading="lazy"
-      />
-      <img
-        class="changeable-image"
-        src="./images/desktop/image-gallery-cone.jpg"
-        alt="A cone standing on its tip"
-        loading="lazy"
-      />
-      <img
-        class="changeable-image"
-        src="./images/desktop/image-gallery-sugarcubes.jpg"
-        alt="Stacked sugar cubes"
-        loading="lazy"
-      />
-    </section>
 
     <footer>
       <img
@@ -241,23 +261,23 @@
       </ul>
       <ul class="social-icons" aria-label="Social media links">
         <li>
-          <a href="#" aria-label="Facebook"
-            ><img src="./images/icon-facebook.svg" alt="Facebook"
+          <a href="https://www.facebook.com" aria-label="Facebook"
+            ><img src="./images/icon-facebook.svg" alt="Facebook logo"
           /></a>
         </li>
         <li>
-          <a href="#" aria-label="Instagram"
-            ><img src="./images/icon-instagram.svg" alt="Instagram"
+          <a href="https://www.instagram.com" aria-label="Instagram"
+            ><img src="./images/icon-instagram.svg" alt="Instagram logo"
           /></a>
         </li>
         <li>
-          <a href="#" aria-label="Twitter"
-            ><img src="./images/icon-twitter.svg" alt="Twitter"
+          <a href="https://www.twitter.com" aria-label="Twitter"
+            ><img src="./images/icon-twitter.svg" alt="Twitter logo"
           /></a>
         </li>
         <li>
-          <a href="#" aria-label="Pinterest"
-            ><img src="./images/icon-pinterest.svg" alt="Pinterest"
+          <a href="https://www.pinterest.com" aria-label="Pinterest"
+            ><img src="./images/icon-pinterest.svg" alt="Pinterest logo"
           /></a>
         </li>
       </ul>

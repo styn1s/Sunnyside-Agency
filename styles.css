@@ -5,20 +5,20 @@ body {
   overflow-x: hidden;
 }
 
-header,
-.header-logo,
-nav,
-.nav-links {
+.header,
+.header__nav {
+  position: relative;
+}
+
+.header,
+.header__logo,
+.header__nav,
+.nav__list {
   display: flex;
   align-items: center;
 }
 
-header,
-nav {
-  position: relative;
-}
-
-header {
+.header {
   flex-direction: row;
   justify-content: space-between;
   padding: 30px 50px 0;
@@ -26,19 +26,19 @@ header {
   background-color: rgba(61, 190, 255, 255);
 }
 
-.header-logo {
+.header__logo {
   justify-content: center;
 }
 
-nav {
+.header__nav {
   justify-content: space-between;
 }
 
-.burger-btn {
+.nav__burger-btn {
   display: none;
 }
 
-.nav-links {
+.nav__list {
   flex-direction: row;
   justify-content: center;
   right: 0;
@@ -48,11 +48,11 @@ nav {
   list-style-type: none;
 }
 
-.nav-links li:first-child {
+.nav__item:first-child {
   padding-left: 0;
 }
 
-.nav-links li a {
+.nav__link {
   display: block;
   font-size: 18px;
   font-family: "Barlow";
@@ -60,7 +60,7 @@ nav {
   color: white;
 }
 
-.nav-links li .contact-btn {
+.nav__link--contact {
   padding: 20px 30px;
   border-radius: 2em;
   font-family: "Fraunces";
@@ -81,6 +81,7 @@ nav {
   position: absolute;
   display: none;
   top: 120px;
+  right: 0;
   width: 100%;
   padding: 0 25px;
   box-sizing: border-box;
@@ -140,7 +141,7 @@ nav {
   background-color: rgba(251, 214, 1, 255);
 }
 
-main {
+.hero {
   position: relative;
   height: 650px;
   text-align: center;
@@ -149,7 +150,7 @@ main {
   background-position: center bottom;
 }
 
-main h1 {
+.hero h1 {
   display: flex;
   justify-content: center;
   margin: 0;
@@ -426,7 +427,7 @@ footer {
 }
 
 @media screen and (min-width: 2000px) {
-  main {
+  .hero {
     height: 800px;
     background-position: 0px 900px;
   }
@@ -501,11 +502,7 @@ footer {
 
 @media screen and (max-width: 768px) {
   header {
-    padding: 35px 0 0;
-  }
-
-  .header-logo {
-    padding-left: 25px;
+    padding: 35px 25px 0;
   }
 
   nav {
@@ -515,7 +512,7 @@ footer {
 
   .burger-btn {
     display: block;
-    padding-right: 25px;
+    padding: 0;
     cursor: pointer;
     background-color: transparent;
     border: none;
@@ -525,11 +522,11 @@ footer {
     display: none;
   }
 
-  main {
+  .hero {
     height: 470px;
   }
 
-  main h1 {
+  .hero h1 {
     font-size: 2.2rem;
     padding: 80px 0 50px 0;
   }
@@ -543,6 +540,10 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .row-wrapper:first-child img {
+    order: 0;
   }
 
   .description {
