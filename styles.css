@@ -18,6 +18,35 @@ body {
   align-items: center;
 }
 
+.footer,
+.footer__services-list,
+.footer__social-media-list {
+  display: flex;
+}
+
+.footer__services-list,
+.footer__social-media-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.testimonials__title,
+.testimonials__name {
+  font-family: "Fraunces";
+}
+
+.testimonials__text,
+.testimonials__job {
+  font-family: "Barlow";
+}
+
+.advantages__description,
+.advantages__link {
+  font-family: "Fraunces";
+  color: hsl(212, 27%, 19%);
+}
+
 .header {
   flex-direction: row;
   justify-content: space-between;
@@ -71,7 +100,7 @@ body {
   transition: 0.3s ease;
 }
 
-.nav-links li .contact-btn:hover {
+.nav__link--contact:hover {
   color: white;
   background-color: rgba(106, 210, 252, 255);
   transition: 0.3s ease;
@@ -88,7 +117,17 @@ body {
   z-index: 2;
 }
 
-.mobile-menu ul {
+.mobile-menu__triangle {
+  position: inherit;
+  top: -30px;
+  right: 25px;
+  width: 0;
+  height: 0;
+  border-bottom: 50px solid white;
+  border-left: 50px solid transparent;
+}
+
+.mobile-menu__list {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,38 +139,28 @@ body {
   background-color: #fff;
 }
 
-.mobile-menu ul li {
+.mobile-menu__item {
   display: block;
   padding: 15px 0;
 }
 
-.mobile-menu a {
-  text-decoration: none;
-}
-
-.mobile-menu ul li:first-child {
+.mobile-menu__item:first-child {
   padding-top: 30px;
 }
 
-.mobile-menu ul li:last-child {
+.mobile-menu__item:last-child {
   padding: 40px 0 50px 0;
 }
 
-.mobile-menu a:not(.contact-btn-mobile) {
+.mobile-menu__link {
+  text-decoration: none;
+}
+
+.mobile-menu__link:not(.mobile-menu__link--contact) {
   color: gray;
 }
 
-.triangle {
-  position: inherit;
-  top: -30px;
-  right: 25px;
-  width: 0;
-  height: 0;
-  border-bottom: 50px solid white;
-  border-left: 50px solid transparent;
-}
-
-.contact-btn-mobile {
+.mobile-menu__link--contact {
   padding: 20px 30px;
   border-radius: 2em;
   font-family: "Fraunces";
@@ -150,31 +179,31 @@ body {
   background-position: center bottom;
 }
 
-.hero h1 {
+.hero__title {
   display: flex;
   justify-content: center;
   margin: 0;
   padding: 100px 0 74px 0;
-  font: 900 3em "Fraunces";
+  font: 900 3rem "Fraunces";
   text-transform: uppercase;
   letter-spacing: 10px;
   color: white;
 }
 
-.advantages img {
-  width: 50%;
-}
-
-.row-wrapper:first-child img {
-  order: 2;
-}
-
-.row-wrapper {
+.advantages__row {
   display: flex;
   width: 100%;
 }
 
-.description {
+.advantages__row:first-child .advantages__image {
+  order: 1;
+}
+
+.advantages__image {
+  width: 50%;
+}
+
+.advantages__description {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -183,26 +212,20 @@ body {
   box-sizing: border-box;
 }
 
-.description h1,
-.description a {
-  font-family: "Fraunces";
-  color: hsl(212, 27%, 19%);
-}
-
-.description h1 {
+.advantages__title {
   margin: 0;
   font-size: 2.5em;
   font-weight: 900;
 }
 
-.description p {
+.advantages__text {
   margin: 40px 0 30px 0;
   font-family: "Barlow";
   line-height: 1.6rem;
   color: hsl(232, 10%, 55%);
 }
 
-.description a {
+.advantages__link {
   position: relative;
   display: block;
   width: fit-content;
@@ -212,7 +235,7 @@ body {
   letter-spacing: 1px;
 }
 
-.learn-more-link::after {
+.advantages__link::after {
   content: "";
   position: absolute;
   bottom: -3px;
@@ -224,23 +247,23 @@ body {
   z-index: -1;
 }
 
-.row-wrapper:first-child .learn-more-link::after {
+.advantages__row:first-child .advantages__link::after {
   background-color: rgba(249, 245, 191, 255);
 }
 
-.row-wrapper:first-child .learn-more-link:hover::after {
+.advantages__row:first-child .advantages__link:hover::after {
   background-color: rgba(251, 217, 7, 255);
 }
 
-.row-wrapper:nth-child(2) .learn-more-link::after {
+.advantages__row:nth-child(2) .advantages__link::after {
   background-color: rgba(254, 216, 209, 255);
 }
 
-.row-wrapper:nth-child(2) .learn-more-link:hover::after {
+.advantages__row:nth-child(2) .advantages__link:hover::after {
   background-color: rgba(250, 110, 93, 255);
 }
 
-.design-card {
+.advantages__card {
   position: relative;
   display: flex;
   justify-content: center;
@@ -250,15 +273,15 @@ body {
   background-position: center;
 }
 
-.design-card:first-child {
+.advantages__card:first-child {
   background-image: url("./images/desktop/image-graphic-design.jpg");
 }
 
-.design-card:last-child {
+.advantages__card:last-child {
   background-image: url("./images/desktop/image-photography.jpg");
 }
 
-.design-text {
+.advantages__card-description {
   position: absolute;
   top: 350px;
   display: flex;
@@ -271,78 +294,44 @@ body {
   z-index: 2;
 }
 
-.design-text h2 {
+.advantages__card-title {
   font-size: 1.5em;
   font-family: "Fraunces";
 }
 
-.design-text p {
+.advantages__card:first-child .advantages__card-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: hsl(167, 40%, 24%);
+}
+
+.advantages__card:last-child .advantages__card-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: hsl(198, 62%, 26%);
+}
+
+.advantages__card-text {
   font-family: "Barlow";
   line-height: 1.6;
 }
 
-.design-card:first-child h2 {
-  font-size: 2rem;
-  font-weight: 900;
-  color: hsl(167, 40%, 24%);
-}
-
-.design-card:last-child h2 {
-  font-size: 2rem;
-  font-weight: 900;
-  color: hsl(198, 62%, 26%);
-}
-
-.design-card:first-child p {
+.advantages__card:first-child .advantages__card-text {
   margin: 0;
   color: hsl(167, 40%, 24%);
 }
 
-.design-card:last-child p {
+.advantages__card:last-child .advantages__card-text {
   margin: 0;
   color: hsl(198, 62%, 26%);
 }
 
-.client-testimonials {
+.testimonials {
   padding: 170px 0;
   background-color: rgba(255, 251, 248, 255);
 }
 
-.testimonials-cards {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  gap: 50px;
-  list-style-type: none;
-}
-
-.testimonials-cards li {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 50px;
-  width: 19.5rem;
-}
-
-.testimonials-cards img {
-  width: 80px;
-  border-radius: 5em;
-}
-
-.client-testimonials h3,
-.client-info h4 {
-  font-family: "Fraunces";
-}
-
-.testimonials-cards p,
-.client-info h6 {
-  font-family: "Barlow";
-}
-
-.client-testimonials h3 {
+.testimonials__title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -352,18 +341,42 @@ body {
   color: rgb(190, 188, 188);
 }
 
-.testimonials-cards p {
+.testimonials__list {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  gap: 50px;
+  list-style-type: none;
+}
+
+.testimonials__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+  width: 19.5rem;
+}
+
+.testimonials__image {
+  width: 80px;
+  border-radius: 5em;
+}
+
+.testimonials__text {
   margin: 0;
   line-height: 1.6;
   color: rgb(95, 94, 94);
 }
 
-.client-info h4 {
+.testimonials__name {
   margin: 0 0 10px 0;
   color: hsl(212, 27%, 19%);
 }
 
-.client-info h6 {
+.testimonials__job {
   margin: 0;
   font-size: 13px;
   color: rgba(178, 178, 178, 255);
@@ -373,24 +386,11 @@ body {
   display: flex;
 }
 
-.product-gallery img {
+.product-gallery__image {
   width: 25%;
 }
 
-footer,
-.services,
-.social-icons {
-  display: flex;
-}
-
-.services,
-.social-icons {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-footer {
+.footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -398,31 +398,31 @@ footer {
   background-color: rgba(144, 212, 197, 255);
 }
 
-.footer-logo {
+.footer__logo {
   width: 150px;
 }
 
-.services {
+.footer__services-list {
   padding: 40px 0 80px 0px;
   gap: 60px;
   box-sizing: border-box;
 }
 
-.services a {
+.footer__services-link {
   font-family: "Barlow";
   text-decoration: none;
   color: hsl(168, 34%, 41%);
 }
 
-.services a:hover {
+.footer__services-link:hover {
   color: #fff;
 }
 
-.social-icons {
+.footer__social-media-list {
   gap: 20px;
 }
 
-.social-icons img:hover {
+.footer__image:hover {
   filter: brightness(0) invert(1);
 }
 
@@ -432,85 +432,85 @@ footer {
     background-position: 0px 900px;
   }
 
-  .description {
+  .advantages__description {
     padding: 0 300px;
   }
 
-  .description p {
+  .advantages__text {
     width: 70%;
   }
 
-  .design-card {
+  .advantages__card {
     height: 1000px;
   }
 
-  .design-text {
+  .advantages__card-description {
     top: 700px;
   }
 
-  .testimonials-cards {
+  .testimonials__list {
     gap: 200px;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .description {
+  .advantages__description {
     padding: 50px 100px;
   }
 
-  .description h1 {
+  .advantages__title {
     font-size: 1.6em;
   }
 
-  .description p {
+  .advantages__text {
     font-size: 16px;
   }
 
-  .description a {
+  .advantages__link {
     font-size: 14px;
   }
 
-  .design-card {
+  .advantages__card {
     height: 550px;
   }
 
-  .design-card:first-child h2,
-  .design-card:last-child h2 {
-    font-size: 1.5rem;
-  }
-
-  .design-text {
+  .advantages__card-description {
+    top: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 21rem;
   }
 
-  .design-text p {
+  .advantages__card-title {
+    font-size: 1.5rem;
+  }
+
+  .advantages__card-text {
     margin: 0;
   }
 
-  .testimonials-cards {
+  .testimonials__list {
     gap: 0;
   }
 
-  .testimonials-cards p {
+  .testimonials__text {
     font-size: 15px;
     width: 16rem;
   }
 }
 
 @media screen and (max-width: 768px) {
-  header {
+  .header {
     padding: 35px 25px 0;
   }
 
-  nav {
+  .header__nav {
     margin: 0;
     padding: 0;
   }
 
-  .burger-btn {
+  .nav__burger-btn {
     display: block;
     padding: 0;
     cursor: pointer;
@@ -518,7 +518,7 @@ footer {
     border: none;
   }
 
-  .nav-links {
+  .nav__list {
     display: none;
   }
 
@@ -526,27 +526,27 @@ footer {
     height: 470px;
   }
 
-  .hero h1 {
+  .hero__title {
     font-size: 2.2rem;
     padding: 80px 0 50px 0;
   }
 
-  .advantages img {
-    order: -1;
-    width: 100%;
-  }
-
-  .row-wrapper {
+  .advantages__row {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .row-wrapper:first-child img {
+  .advantages__image {
+    order: -1;
+    width: 100%;
+  }
+
+  .advantages__row:first-child .advantages__image {
     order: 0;
   }
 
-  .description {
+  .advantages__description {
     justify-content: center;
     align-items: center;
     padding: 70px 0;
@@ -554,55 +554,51 @@ footer {
     width: 80%;
   }
 
-  .description h1 {
+  .advantages__title {
     font-size: 1.7rem;
     font-weight: 900;
   }
 
-  .description p {
+  .advantages__text {
     margin: 20px 0 30px;
     font-size: 16px;
     width: 17.9375rem;
   }
 
-  .description:last-child p {
+  .advantages__description:last-child .advantages__text {
     box-sizing: border-box;
   }
 
-  .design-card {
+  .advantages__card {
     width: 100%;
     height: 500px;
   }
 
-  .design-card p {
-    font-size: 15px;
-    margin: 0;
-  }
-
-  .design-text {
+  .advantages__card-description {
     bottom: 120px;
     width: 20.125rem;
   }
 
-  .client-testimonials {
+  .advantages__card-text {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .testimonials {
     padding: 60px 0;
   }
 
-  .client-testimonials h3 {
+  .testimonials__title {
     font-size: 13px;
     margin: 0 0 50px;
   }
 
-  .testimonials-cards {
+  .testimonials__list {
     flex-direction: column;
     gap: 70px;
   }
 
-  .testimonials-cards p {
-    margin: 0;
-  }
-
-  .testimonials-cards li {
+  .testimonials__item {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -612,12 +608,15 @@ footer {
     width: 17.25rem;
   }
 
+  .testimonials__text {
+    margin: 0;
+  }
+
   .product-gallery {
-    display: flex;
     flex-wrap: wrap;
   }
 
-  .product-gallery img {
+  .product-gallery__image {
     width: 50%;
   }
 }

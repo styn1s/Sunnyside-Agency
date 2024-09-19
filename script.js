@@ -1,4 +1,4 @@
-var config = {
+const config = {
   desktopImages: {
     heroSection: "./images/desktop/image-header.jpg",
     graphicDesignCard: "./images/desktop/image-graphic-design.jpg",
@@ -11,7 +11,7 @@ var config = {
   },
 };
 
-const burgerBtn = document.querySelector(".burger-btn");
+const burgerBtn = document.querySelector(".nav__burger-btn");
 const mobileMenu = document.querySelector(".mobile-menu");
 
 function updateImages() {
@@ -64,7 +64,6 @@ function changeBackgroundImage(element, imageUrl) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  /*updateImages();*/
   window.addEventListener("resize", updateImages);
   burgerBtn.addEventListener("click", toggleMobileMenu);
 });

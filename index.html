@@ -75,19 +75,34 @@
         <div class="mobile-menu__triangle"></div>
         <ul class="mobile-menu__list">
           <li class="mobile-menu__item">
-            <a href="#about" aria-label="About section">About</a>
+            <a
+              href="#about"
+              class="mobile-menu__link"
+              aria-label="About section"
+              >About</a
+            >
           </li>
           <li class="mobile-menu__item">
-            <a href="#services" aria-label="Services section">Services</a>
+            <a
+              href="#services"
+              class="mobile-menu__link"
+              aria-label="Services section"
+              >Services</a
+            >
           </li>
           <li class="mobile-menu__item">
-            <a href="#projects" aria-label="Projects section">Projects</a>
+            <a
+              href="#projects"
+              class="mobile-menu__link"
+              aria-label="Projects section"
+              >Projects</a
+            >
           </li>
           <li class="mobile-menu__item">
             <a
               href="#contact"
               aria-label="Contact section"
-              class="contact-btn-mobile"
+              class="mobile-menu__link mobile-menu__link--contact"
               >Contact</a
             >
           </li>
@@ -97,67 +112,81 @@
 
     <main>
       <section class="hero">
-        <h1>We are creatives</h1>
+        <h1 class="hero__title">We are creatives</h1>
         <img
-          class="arrow"
+          class="hero__arrow"
           src="./images/icon-arrow-down.svg"
-          alt="White arrow image"
+          alt="White arrow"
           loading="lazy"
         />
       </section>
 
       <section class="advantages" aria-labelledby="advantages-heading">
-        <div class="row-wrapper">
+        <div class="advantages__row">
           <img
-            class="changeable-image"
+            class="advantages__image"
             src="./images/desktop/image-transform.jpg"
             alt="An egg representing transformation"
             loading="lazy"
           />
-          <div class="description">
-            <h1 id="advantages-heading">Transform your brand</h1>
-            <p>
+          <div class="advantages__description">
+            <h1 class="advantages__title" id="advantages-heading">
+              Transform your brand
+            </h1>
+            <p class="advantages__text">
               We are a full-service creative agency specializing in helping
               brands grow fast. Engage your clients through compelling visuals
               that do most of the marketing for you.
             </p>
-            <a class="relative learn-more-link" href="#learn-more"
-              >Learn more</a
-            >
+            <a class="advantages__link" href="#learn-more">Learn more</a>
           </div>
         </div>
-        <div class="row-wrapper">
+        <div class="advantages__row">
           <img
-            class="changeable-image"
+            class="advantages__image"
             src="./images/desktop/image-stand-out.jpg"
             alt="A red glass representing standing out"
             loading="lazy"
           />
-          <div class="description">
-            <h1 id="advantages-heading">Stand out to the right audience</h1>
-            <p>
+          <div class="advantages__description">
+            <h1 class="advantages__title" id="advantages-heading">
+              Stand out to the right audience
+            </h1>
+            <p class="advantages__text">
               Using a collaborative formula of designers, researchers,
               photographers, videographers, and copywriters, we'll build and
               extend your brand in digital places.
             </p>
-            <a class="learn-more-link" href="#learn-more">Learn more</a>
+            <a class="advantages__link" href="#learn-more">Learn more</a>
           </div>
         </div>
-        <div class="row-wrapper">
-          <div class="design-card" id="card-1" aria-labelledby="card-1-heading">
-            <div class="design-text">
-              <h2 id="card-1-heading">Graphic Design</h2>
-              <p>
+        <div class="advantages__row">
+          <div
+            class="advantages__card"
+            id="card-1"
+            aria-labelledby="card-1-heading"
+          >
+            <div class="advantages__card-description">
+              <h2 class="advantages__card-title" id="card-1-heading">
+                Graphic Design
+              </h2>
+              <p class="advantages__card-text">
                 Great design makes you memorable. We deliver artwork that
                 underscores your brand message and captures potential clients'
                 attention.
               </p>
             </div>
           </div>
-          <div class="design-card" id="card-2" aria-labelledby="card-2-heading">
-            <div class="design-text">
-              <h2 id="card-2-heading">Photography</h2>
-              <p>
+          <div
+            class="advantages__card"
+            id="card-2"
+            aria-labelledby="card-2-heading"
+          >
+            <div class="advantages__card-description">
+              <h2 class="advantages__card-title" id="card-2-heading">
+                Photography
+              </h2>
+              <p class="advantages__card-text">
                 Increase your credibility by getting the most stunning,
                 high-quality photos that improve your business image.
               </p>
@@ -166,55 +195,57 @@
         </div>
       </section>
 
-      <section
-        class="client-testimonials"
-        aria-labelledby="testimonials-heading"
-      >
-        <h3 id="testimonials-heading">Client testimonials</h3>
-        <ul class="testimonials-cards">
-          <li class="card">
+      <section class="testimonials" aria-labelledby="testimonials-heading">
+        <h3 class="testimonials__title" id="testimonials-heading">
+          Client testimonials
+        </h3>
+        <ul class="testimonials__list">
+          <li class="testimonials__item">
             <img
+              class="testimonials__image"
               src="./images/image-emily.jpg"
               alt="Portrait of Emily, Marketing Director"
               loading="lazy"
             />
-            <p>
+            <p class="testimonials__text">
               We put our trust in Sunnyside and they delivered, making sure our
               needs were met and deadlines were always hit.
             </p>
-            <div class="client-info">
-              <h4>Emily R.</h4>
-              <h6>Marketing Director</h6>
+            <div class="testimonials__client-info">
+              <h4 class="testimonials__name">Emily R.</h4>
+              <h6 class="testimonials__job">Marketing Director</h6>
             </div>
           </li>
-          <li class="card">
+          <li class="testimonials__item">
             <img
+              class="testimonials__image"
               src="./images/image-thomas.jpg"
               alt="Portrait of Thomas, Chief Operating Officer"
               loading="lazy"
             />
-            <p>
+            <p class="testimonials__text">
               Sunnyside's enthusiasm coupled with their keen interest in our
               brand's success made it a satisfying and enjoyable experience.
             </p>
-            <div class="client-info">
-              <h4>Thomas S.</h4>
-              <h6>Chief Operating Officer</h6>
+            <div class="testimonials__client-info">
+              <h4 class="testimonials__name">Thomas S.</h4>
+              <h6 class="testimonials__job">Chief Operating Officer</h6>
             </div>
           </li>
-          <li class="card">
+          <li class="testimonials__item">
             <img
+              class="testimonials__image"
               src="./images/image-jennie.jpg"
               alt="Portrait of Jennie, Business Owner"
               loading="lazy"
             />
-            <p>
+            <p class="testimonials__text">
               Incredible end result! Our sales increased over 400% when we
               worked with Sunnyside. Highly recommended!
             </p>
-            <div class="client-info">
-              <h4>Jennie F.</h4>
-              <h6>Business Owner</h6>
+            <div class="testimonials__client-info">
+              <h4 class="testimonials__name">Jennie F.</h4>
+              <h6 class="testimonials__job">Business Owner</h6>
             </div>
           </li>
         </ul>
@@ -222,25 +253,25 @@
 
       <section class="product-gallery" aria-label="Product gallery">
         <img
-          class="changeable-image"
+          class="product-gallery__image"
           src="./images/desktop/image-gallery-milkbottles.jpg"
           alt="Four milk bottles in a row"
           loading="lazy"
         />
         <img
-          class="changeable-image"
+          class="product-gallery__image"
           src="./images/desktop/image-gallery-orange.jpg"
           alt="An orange slice on a bright background"
           loading="lazy"
         />
         <img
-          class="changeable-image"
+          class="product-gallery__image"
           src="./images/desktop/image-gallery-cone.jpg"
           alt="A cone standing on its tip"
           loading="lazy"
         />
         <img
-          class="changeable-image"
+          class="product-gallery__image"
           src="./images/desktop/image-gallery-sugarcubes.jpg"
           alt="Stacked sugar cubes"
           loading="lazy"
@@ -248,36 +279,54 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="footer">
       <img
-        class="footer-logo"
+        class="footer__logo"
         src="./images/footer-logo.svg"
         alt="Sunnyside logo"
       />
-      <ul class="services" aria-label="Services links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
+      <ul class="footer__services-list" aria-label="Services links">
+        <li class="footer__services-item">
+          <a href="#about" class="footer__services-link">About</a>
+        </li>
+        <li class="footer__services-item">
+          <a href="#services" class="footer__services-link">Services</a>
+        </li>
+        <li class="footer__services-item">
+          <a href="#projects" class="footer__services-link">Projects</a>
+        </li>
       </ul>
-      <ul class="social-icons" aria-label="Social media links">
-        <li>
+      <ul class="footer__social-media-list" aria-label="Social media links">
+        <li class="footer__social-media-item">
           <a href="https://www.facebook.com" aria-label="Facebook"
-            ><img src="./images/icon-facebook.svg" alt="Facebook logo"
+            ><img
+              class="footer__image"
+              src="./images/icon-facebook.svg"
+              alt="Facebook logo"
           /></a>
         </li>
-        <li>
+        <li class="footer__social-media-item">
           <a href="https://www.instagram.com" aria-label="Instagram"
-            ><img src="./images/icon-instagram.svg" alt="Instagram logo"
+            ><img
+              class="footer__image"
+              src="./images/icon-instagram.svg"
+              alt="Instagram logo"
           /></a>
         </li>
-        <li>
+        <li class="footer__social-media-item">
           <a href="https://www.twitter.com" aria-label="Twitter"
-            ><img src="./images/icon-twitter.svg" alt="Twitter logo"
+            ><img
+              class="footer__image"
+              src="./images/icon-twitter.svg"
+              alt="Twitter logo"
           /></a>
         </li>
-        <li>
+        <li class="footer__social-media-item">
           <a href="https://www.pinterest.com" aria-label="Pinterest"
-            ><img src="./images/icon-pinterest.svg" alt="Pinterest logo"
+            ><img
+              class="footer__image"
+              src="./images/icon-pinterest.svg"
+              alt="Pinterest logo"
           /></a>
         </li>
       </ul>
