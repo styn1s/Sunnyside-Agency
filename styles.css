@@ -1,7 +1,17 @@
+:root {
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  --gray-color: hsl(0, 0%, 50%);
+  --contact-hover-color: hsla(197, 96%, 70%, 1);
+  --mobile-contact-color: hsla(51, 99%, 49%, 1);
+  --text-color: hsl(232, 10%, 55%);
+  --soft-yellow-color: hsla(56, 83%, 86%, 1);
+}
+
 html,
 body {
-  margin: 0;
   height: auto;
+  margin: 0;
   overflow-x: hidden;
 }
 
@@ -51,8 +61,8 @@ body {
   flex-direction: row;
   justify-content: space-between;
   padding: 30px 50px 0;
-  box-sizing: content-box;
   background-color: rgba(61, 190, 255, 255);
+  box-sizing: content-box;
 }
 
 .header__logo {
@@ -68,9 +78,9 @@ body {
 }
 
 .nav__list {
+  right: 0;
   flex-direction: row;
   justify-content: center;
-  right: 0;
   margin: 0;
   padding: 0;
   gap: 40px;
@@ -86,23 +96,23 @@ body {
   font-size: 18px;
   font-family: "Barlow";
   text-decoration: none;
-  color: white;
+  color: var(--white-color);
 }
 
 .nav__link--contact {
   padding: 20px 30px;
-  border-radius: 2em;
   font-family: "Fraunces";
   font-weight: bold;
   text-transform: uppercase;
-  color: black;
-  background-color: white;
+  color: var(--black-color);
+  background-color: var(--white-color);
+  border-radius: 2rem;
   transition: 0.3s ease;
 }
 
 .nav__link--contact:hover {
-  color: white;
-  background-color: rgba(106, 210, 252, 255);
+  color: var(--white-color);
+  background-color: var(--contact-hover-color);
   transition: 0.3s ease;
 }
 
@@ -123,7 +133,7 @@ body {
   right: 25px;
   width: 0;
   height: 0;
-  border-bottom: 50px solid white;
+  border-bottom: 50px solid var(--white-color);
   border-left: 50px solid transparent;
 }
 
@@ -136,7 +146,7 @@ body {
   padding: 0;
   font-family: "Barlow";
   list-style-type: none;
-  background-color: #fff;
+  background-color: var(--white-color);
 }
 
 .mobile-menu__item {
@@ -157,17 +167,17 @@ body {
 }
 
 .mobile-menu__link:not(.mobile-menu__link--contact) {
-  color: gray;
+  color: var(--gray-color);
 }
 
 .mobile-menu__link--contact {
   padding: 20px 30px;
-  border-radius: 2em;
   font-family: "Fraunces";
   font-weight: bold;
   text-transform: uppercase;
-  color: black;
-  background-color: rgba(251, 214, 1, 255);
+  color: var(--black-color);
+  background-color: var(--mobile-contact-color);
+  border-radius: 2rem;
 }
 
 .hero {
@@ -187,7 +197,7 @@ body {
   font: 900 3rem "Fraunces";
   text-transform: uppercase;
   letter-spacing: 10px;
-  color: white;
+  color: var(--white-color);
 }
 
 .advantages__row {
@@ -214,7 +224,7 @@ body {
 
 .advantages__title {
   margin: 0;
-  font-size: 2.5em;
+  font-size: 2.5rem;
   font-weight: 900;
 }
 
@@ -222,7 +232,7 @@ body {
   margin: 40px 0 30px 0;
   font-family: "Barlow";
   line-height: 1.6rem;
-  color: hsl(232, 10%, 55%);
+  color: var(--text-color);
 }
 
 .advantages__link {
