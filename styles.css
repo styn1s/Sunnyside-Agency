@@ -12,6 +12,15 @@
   --light-red-color: hsla(9, 96%, 91%, 1);
   --soft-red-color: hsl(7, 99%, 70%);
   --very-dark-desatureted-blue: hsl(212, 27%, 19%);
+  --header-color: hsla(200, 100%, 62%, 1);
+  --desatureted-cyan-color: hsl(167, 40%, 24%);
+  --dark-blue-color: hsl(198, 62%, 26%);
+  --background-color: hsla(26, 100%, 99%, 1);
+  --testimonials-title-color: hsl(0, 2%, 74%);
+  --testimonials-text-color: hsl(0, 1%, 37%);
+  --job-title-color: hsla(0, 0%, 70%, 1);
+  --footer-color: hsla(167, 44%, 70%, 1);
+  --dark-moderate-cyan-color: hsl(168, 34%, 41%);
 }
 
 html,
@@ -27,20 +36,36 @@ body {
   position: relative;
 }
 
-.header,
-.header__logo,
-.header__nav,
-.nav__list {
+.mobile-menu, 
+.mobile-menu__triangle {
+  position: absolute;
+}
+
+.nav__burger-btn,
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu__list, 
+.advantages__card-description {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
+.header,
+.header__logo,
+.header__nav,
+.nav__list,
 .footer,
 .footer__services-list,
 .footer__social-media-list {
   display: flex;
+  align-items: center;
 }
 
+.mobile-menu__list,
 .footer__services-list,
 .footer__social-media-list {
   margin: 0;
@@ -59,30 +84,18 @@ body {
   color: var(--very-dark-desatureted-blue);
 }
 
-.header {
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1.875rem 3.125rem 0;
-  background-color: rgba(61, 190, 255, 255);
-  box-sizing: content-box;
-}
-
-.header__logo {
-  justify-content: center;
-}
-
+.header,
 .header__nav {
   justify-content: space-between;
 }
 
-.nav__burger-btn {
-  display: none;
+.header {
+  padding: 1.875rem 3.125rem 0;
+  background-color: var(--header-color);
 }
 
 .nav__list {
   right: 0;
-  flex-direction: row;
-  justify-content: center;
   margin: 0;
   padding: 0;
   gap: 2.5rem;
@@ -114,12 +127,9 @@ body {
 .nav__link--contact:hover {
   color: var(--white-color);
   background-color: var(--contact-hover-color);
-  transition: 0.3s ease;
 }
 
 .mobile-menu {
-  position: absolute;
-  display: none;
   top: 7.5rem;
   right: 0;
   width: 100%;
@@ -129,23 +139,15 @@ body {
 }
 
 .mobile-menu__triangle {
-  position: inherit;
   top: -1.875rem;
   right: 1.5625rem;
   width: 0;
   height: 0;
-  border-bottom: 3.125rem solid var(--white-color);
-  border-left: 3.125rem solid transparent;
+  border-bottom: 1.875rem solid var(--white-color);
+  border-left: 1.875rem solid transparent;
 }
 
 .mobile-menu__list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
   background-color: var(--white-color);
 }
 
@@ -293,10 +295,6 @@ body {
 .advantages__card-description {
   position: absolute;
   top: 21.875rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 22rem;
   text-align: center;
   box-sizing: border-box;
@@ -311,13 +309,13 @@ body {
 .advantages__card:first-child .advantages__card-title {
   font-size: 2rem;
   font-weight: 900;
-  color: hsl(167, 40%, 24%);
+  color: var(--desatureted-cyan-color);
 }
 
 .advantages__card:last-child .advantages__card-title {
   font-size: 2rem;
   font-weight: 900;
-  color: hsl(198, 62%, 26%);
+  color: var(--dark-blue-color);
 }
 
 .advantages__card-text {
@@ -326,17 +324,17 @@ body {
 
 .advantages__card:first-child .advantages__card-text {
   margin: 0;
-  color: hsl(167, 40%, 24%);
+  color: var(--desatureted-cyan-color);
 }
 
 .advantages__card:last-child .advantages__card-text {
   margin: 0;
-  color: hsl(198, 62%, 26%);
+  color: var(--dark-blue-color);
 }
 
 .testimonials {
   padding: 10.625rem 0;
-  background-color: rgba(255, 251, 248, 255);
+  background-color: var(--background-color);
 }
 
 .testimonials__title {
@@ -346,7 +344,7 @@ body {
   margin: 0 0 6.25rem 0;
   text-transform: uppercase;
   letter-spacing: .4375rem;
-  color: rgb(190, 188, 188);
+  color: var(--testimonials-title-color);
 }
 
 .testimonials__list {
@@ -376,18 +374,18 @@ body {
 .testimonials__text {
   margin: 0;
   line-height: 1.7rem;
-  color: rgb(95, 94, 94);
+  color: var(--testimonials-text-color);
 }
 
 .testimonials__name {
   margin: 0 0 .625rem 0;
-  color: hsl(212, 27%, 19%);
+  color: var(--very-dark-desatureted-blue);
 }
 
 .testimonials__job {
   margin: 0;
   font-size: .8125rem;
-  color: rgba(178, 178, 178, 255);
+  color: var(--job-title-color);
 }
 
 .product-gallery {
@@ -403,7 +401,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 3.75rem 0;
-  background-color: rgba(144, 212, 197, 255);
+  background-color: var(--footer-color);
 }
 
 .footer__logo {
@@ -418,11 +416,11 @@ body {
 
 .footer__services-link {
   text-decoration: none;
-  color: hsl(168, 34%, 41%);
+  color: var(--dark-moderate-cyan-color);
 }
 
 .footer__services-link:hover {
-  color: #fff;
+  color: var(--white-color);
 }
 
 .footer__social-media-list {
