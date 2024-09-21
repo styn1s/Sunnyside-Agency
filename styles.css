@@ -1,4 +1,6 @@
 :root {
+  --primary-font: "Barlow", "Verdana", sans-serif;
+  --secondary-font: "Fraunces", "Cambria", sans-serif;
   --white-color: hsl(0, 0%, 100%);
   --black-color: hsl(0, 0%, 0%);
   --gray-color: hsl(0, 0%, 50%);
@@ -6,12 +8,17 @@
   --mobile-contact-color: hsla(51, 99%, 49%, 1);
   --text-color: hsl(232, 10%, 55%);
   --soft-yellow-color: hsla(56, 83%, 86%, 1);
+  --yellow-color: hsla(52, 97%, 51%, 1);
+  --light-red-color: hsla(9, 96%, 91%, 1);
+  --soft-red-color: hsl(7, 99%, 70%);
+  --very-dark-desatureted-blue: hsl(212, 27%, 19%);
 }
 
 html,
 body {
   height: auto;
   margin: 0;
+  font-family: var(--primary-font);
   overflow-x: hidden;
 }
 
@@ -43,24 +50,19 @@ body {
 
 .testimonials__title,
 .testimonials__name {
-  font-family: "Fraunces";
+  font-family: var(--secondary-font);
 }
 
-.testimonials__text,
-.testimonials__job {
-  font-family: "Barlow";
-}
-
-.advantages__description,
+.advantages__title,
 .advantages__link {
-  font-family: "Fraunces";
-  color: hsl(212, 27%, 19%);
+  font-family: var(--secondary-font);
+  color: var(--very-dark-desatureted-blue);
 }
 
 .header {
   flex-direction: row;
   justify-content: space-between;
-  padding: 30px 50px 0;
+  padding: 1.875rem 3.125rem 0;
   background-color: rgba(61, 190, 255, 255);
   box-sizing: content-box;
 }
@@ -83,7 +85,7 @@ body {
   justify-content: center;
   margin: 0;
   padding: 0;
-  gap: 40px;
+  gap: 2.5rem;
   list-style-type: none;
 }
 
@@ -93,15 +95,14 @@ body {
 
 .nav__link {
   display: block;
-  font-size: 18px;
-  font-family: "Barlow";
+  font-size: 1.125rem;
   text-decoration: none;
   color: var(--white-color);
 }
 
 .nav__link--contact {
-  padding: 20px 30px;
-  font-family: "Fraunces";
+  padding: 1.25rem 1.875rem;
+  font-family: var(--secondary-font);
   font-weight: bold;
   text-transform: uppercase;
   color: var(--black-color);
@@ -119,22 +120,22 @@ body {
 .mobile-menu {
   position: absolute;
   display: none;
-  top: 120px;
+  top: 7.5rem;
   right: 0;
   width: 100%;
-  padding: 0 25px;
+  padding: 0 1.5625rem;
   box-sizing: border-box;
   z-index: 2;
 }
 
 .mobile-menu__triangle {
   position: inherit;
-  top: -30px;
-  right: 25px;
+  top: -1.875rem;
+  right: 1.5625rem;
   width: 0;
   height: 0;
-  border-bottom: 50px solid var(--white-color);
-  border-left: 50px solid transparent;
+  border-bottom: 3.125rem solid var(--white-color);
+  border-left: 3.125rem solid transparent;
 }
 
 .mobile-menu__list {
@@ -144,22 +145,21 @@ body {
   align-items: center;
   margin: 0;
   padding: 0;
-  font-family: "Barlow";
   list-style-type: none;
   background-color: var(--white-color);
 }
 
 .mobile-menu__item {
   display: block;
-  padding: 15px 0;
+  padding: .9375rem 0;
 }
 
 .mobile-menu__item:first-child {
-  padding-top: 30px;
+  padding-top: 1.875rem;
 }
 
 .mobile-menu__item:last-child {
-  padding: 40px 0 50px 0;
+  padding: 2.5rem 0 3.125rem 0;
 }
 
 .mobile-menu__link {
@@ -171,8 +171,8 @@ body {
 }
 
 .mobile-menu__link--contact {
-  padding: 20px 30px;
-  font-family: "Fraunces";
+  padding: 1.25rem 1.875rem;
+  font-family: var(--secondary-font);
   font-weight: bold;
   text-transform: uppercase;
   color: var(--black-color);
@@ -182,7 +182,7 @@ body {
 
 .hero {
   position: relative;
-  height: 650px;
+  height: 40.625rem;
   text-align: center;
   background-image: url("./images/desktop/image-header.jpg");
   background-size: cover;
@@ -193,10 +193,10 @@ body {
   display: flex;
   justify-content: center;
   margin: 0;
-  padding: 100px 0 74px 0;
+  padding: 6.25rem 0 4.625rem 0;
   font: 900 3rem "Fraunces";
   text-transform: uppercase;
-  letter-spacing: 10px;
+  letter-spacing: .625rem;
   color: var(--white-color);
 }
 
@@ -218,7 +218,7 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 50%;
-  padding: 0 120px;
+  padding: 0 7.5rem;
   box-sizing: border-box;
 }
 
@@ -229,8 +229,7 @@ body {
 }
 
 .advantages__text {
-  margin: 40px 0 30px 0;
-  font-family: "Barlow";
+  margin: 2.5rem 0 1.875rem 0;
   line-height: 1.6rem;
   color: var(--text-color);
 }
@@ -242,35 +241,35 @@ body {
   font-weight: 900;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: .0625rem;
 }
 
 .advantages__link::after {
   content: "";
   position: absolute;
-  bottom: -3px;
-  right: -6px;
+  bottom: -0.1875rem;
+  right: -0.375rem;
   width: 113%;
-  height: 10px;
-  border-radius: 5px;
+  height: .625rem;
+  border-radius: .3125rem;
   transition: 0.3s ease;
   z-index: -1;
 }
 
 .advantages__row:first-child .advantages__link::after {
-  background-color: rgba(249, 245, 191, 255);
+  background-color: var(--soft-yellow-color);
 }
 
 .advantages__row:first-child .advantages__link:hover::after {
-  background-color: rgba(251, 217, 7, 255);
+  background-color: var(--yellow-color);
 }
 
 .advantages__row:nth-child(2) .advantages__link::after {
-  background-color: rgba(254, 216, 209, 255);
+  background-color: var(--light-red-color);
 }
 
 .advantages__row:nth-child(2) .advantages__link:hover::after {
-  background-color: rgba(250, 110, 93, 255);
+  background-color: var(--soft-red-color);
 }
 
 .advantages__card {
@@ -278,7 +277,7 @@ body {
   display: flex;
   justify-content: center;
   width: 50%;
-  height: 600px;
+  height: 37.5rem;
   background-size: cover;
   background-position: center;
 }
@@ -293,20 +292,20 @@ body {
 
 .advantages__card-description {
   position: absolute;
-  top: 350px;
+  top: 21.875rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   width: 22rem;
+  text-align: center;
   box-sizing: border-box;
   z-index: 2;
 }
 
 .advantages__card-title {
-  font-size: 1.5em;
-  font-family: "Fraunces";
+  font-size: 1.5rem;
+  font-family: var(--secondary-font);
 }
 
 .advantages__card:first-child .advantages__card-title {
@@ -322,8 +321,7 @@ body {
 }
 
 .advantages__card-text {
-  font-family: "Barlow";
-  line-height: 1.6;
+  line-height: 1.7rem;
 }
 
 .advantages__card:first-child .advantages__card-text {
@@ -337,7 +335,7 @@ body {
 }
 
 .testimonials {
-  padding: 170px 0;
+  padding: 10.625rem 0;
   background-color: rgba(255, 251, 248, 255);
 }
 
@@ -345,9 +343,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px 0 100px 0;
+  margin: 0 0 6.25rem 0;
   text-transform: uppercase;
-  letter-spacing: 7px;
+  letter-spacing: .4375rem;
   color: rgb(190, 188, 188);
 }
 
@@ -356,7 +354,7 @@ body {
   justify-content: center;
   margin: 0;
   padding: 0;
-  gap: 50px;
+  gap: 3.125rem;
   list-style-type: none;
 }
 
@@ -365,30 +363,30 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 50px;
   width: 19.5rem;
+  gap: 3.125rem;
+  text-align: center;
 }
 
 .testimonials__image {
-  width: 80px;
-  border-radius: 5em;
+  width: 5rem;
+  border-radius: 5rem;
 }
 
 .testimonials__text {
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.7rem;
   color: rgb(95, 94, 94);
 }
 
 .testimonials__name {
-  margin: 0 0 10px 0;
+  margin: 0 0 .625rem 0;
   color: hsl(212, 27%, 19%);
 }
 
 .testimonials__job {
   margin: 0;
-  font-size: 13px;
+  font-size: .8125rem;
   color: rgba(178, 178, 178, 255);
 }
 
@@ -404,22 +402,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 60px 0;
+  padding: 3.75rem 0;
   background-color: rgba(144, 212, 197, 255);
 }
 
 .footer__logo {
-  width: 150px;
+  width: 9.375rem;
 }
 
 .footer__services-list {
-  padding: 40px 0 80px 0px;
-  gap: 60px;
+  padding: 2.5rem 0 5rem 0;
+  gap: 3.75rem;
   box-sizing: border-box;
 }
 
 .footer__services-link {
-  font-family: "Barlow";
   text-decoration: none;
   color: hsl(168, 34%, 41%);
 }
@@ -429,7 +426,7 @@ body {
 }
 
 .footer__social-media-list {
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .footer__image:hover {
@@ -438,12 +435,12 @@ body {
 
 @media screen and (min-width: 2000px) {
   .hero {
-    height: 800px;
-    background-position: 0px 900px;
+    height: 50rem;
+    background-position: 0 56.25rem;
   }
 
   .advantages__description {
-    padding: 0 300px;
+    padding: 0 18.75rem;
   }
 
   .advantages__text {
@@ -451,41 +448,41 @@ body {
   }
 
   .advantages__card {
-    height: 1000px;
+    height: 62.5rem;
   }
 
   .advantages__card-description {
-    top: 700px;
+    top: 43.75rem;
   }
 
   .testimonials__list {
-    gap: 200px;
+    gap: 12.5rem;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .advantages__description {
-    padding: 50px 100px;
+    padding: 3.125rem 6.25rem;
   }
 
   .advantages__title {
-    font-size: 1.6em;
+    font-size: 1.6rem;
   }
 
   .advantages__text {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .advantages__link {
-    font-size: 14px;
+    font-size: .875rem;
   }
 
   .advantages__card {
-    height: 550px;
+    height: 34.375rem;
   }
 
   .advantages__card-description {
-    top: 300px;
+    top: 18.75rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -505,14 +502,14 @@ body {
   }
 
   .testimonials__text {
-    font-size: 15px;
     width: 16rem;
+    font-size: .9375rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .header {
-    padding: 35px 25px 0;
+    padding: 2.1875rem 1.5625rem 0;
   }
 
   .header__nav {
@@ -523,9 +520,11 @@ body {
   .nav__burger-btn {
     display: block;
     padding: 0;
-    cursor: pointer;
-    background-color: transparent;
+    width: 1.5625rem;
+    height: 1.5625rem;
+    background: url("./images/icon-hamburger.svg") center no-repeat transparent;
     border: none;
+    cursor: pointer;
   }
 
   .nav__list {
@@ -533,12 +532,12 @@ body {
   }
 
   .hero {
-    height: 470px;
+    height: 29.375rem;
   }
 
   .hero__title {
+    padding: 5rem 0 3.125rem 0;
     font-size: 2.2rem;
-    padding: 80px 0 50px 0;
   }
 
   .advantages__row {
@@ -548,8 +547,8 @@ body {
   }
 
   .advantages__image {
-    order: -1;
     width: 100%;
+    order: -1;
   }
 
   .advantages__row:first-child .advantages__image {
@@ -559,9 +558,9 @@ body {
   .advantages__description {
     justify-content: center;
     align-items: center;
-    padding: 70px 0;
-    text-align: center;
     width: 80%;
+    padding: 4.375rem 0;
+    text-align: center;
   }
 
   .advantages__title {
@@ -570,9 +569,9 @@ body {
   }
 
   .advantages__text {
-    margin: 20px 0 30px;
-    font-size: 16px;
     width: 17.9375rem;
+    margin: 1.25rem 0 1.875rem;
+    font-size: 1rem;
   }
 
   .advantages__description:last-child .advantages__text {
@@ -581,31 +580,31 @@ body {
 
   .advantages__card {
     width: 100%;
-    height: 500px;
+    height: 31.25rem;
   }
 
   .advantages__card-description {
-    bottom: 120px;
+    bottom: 7.5rem;
     width: 20.125rem;
   }
 
   .advantages__card-text {
-    font-size: 15px;
     margin: 0;
+    font-size: .9375rem;
   }
 
   .testimonials {
-    padding: 60px 0;
+    padding: 3.75rem 0;
   }
 
   .testimonials__title {
-    font-size: 13px;
-    margin: 0 0 50px;
+    margin: 0 0 3.125rem;
+    font-size: .8125rem;
   }
 
   .testimonials__list {
     flex-direction: column;
-    gap: 70px;
+    gap: 4.375rem;
   }
 
   .testimonials__item {
@@ -613,9 +612,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    margin: auto;
     width: 17.25rem;
+    margin: auto;
+    gap: 1.875rem;
   }
 
   .testimonials__text {
