@@ -26,18 +26,21 @@
 html,
 body {
   height: auto;
-  margin: 0;
   font-family: var(--primary-font);
   overflow-x: hidden;
 }
 
 .header,
-.header__nav {
+.header__nav,
+.advantages__link,
+.advantages__card {
   position: relative;
 }
 
 .mobile-menu, 
-.mobile-menu__triangle {
+.mobile-menu__triangle,
+.advantages__link::after,
+.advantages__card-description {
   position: absolute;
 }
 
@@ -46,12 +49,38 @@ body {
   display: none;
 }
 
+.nav__link,
+.advantages__link {
+  display: block;
+}
+
+.advantages__row,
+.product-gallery {
+  display: flex;
+}
+
 .mobile-menu__list, 
-.advantages__card-description {
+.advantages__card-description,
+.testimonials__item,
+.footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.advantages__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero__title,
+.advantages__card,
+.testimonials__title,
+.testimonials__list {
+  display: flex;
+  justify-content: center;
 }
 
 .header,
@@ -65,7 +94,35 @@ body {
   align-items: center;
 }
 
+.header,
+.header__nav {
+  justify-content: space-between;
+}
+
+.advantages__image,
+.advantages__description,
+.advantages__card {
+  width: 50%;
+}
+
+.mobile-menu,
+.advantages__row {
+  width: 100%;
+}
+
+html,
+body,
+.hero__title,
+.advantages__title,
+.advantages__card-text,
+.testimonials__text,
+.testimonials__job {
+  margin: 0;
+}
+
+.nav__list,
 .mobile-menu__list,
+.testimonials__list,
 .footer__services-list,
 .footer__social-media-list {
   margin: 0;
@@ -73,9 +130,27 @@ body {
   list-style-type: none;
 }
 
+.testimonials__list,
+.testimonials__item {
+  gap: 3.125rem;
+}
+
+.mobile-menu,
+.advantages__description,
+.advantages__card-description,
+.footer__services-list {
+  box-sizing: border-box;
+}
+
 .testimonials__title,
 .testimonials__name {
   font-family: var(--secondary-font);
+}
+
+.advantages__card:first-child .advantages__card-title,
+.advantages__card:last-child .advantages__card-title {
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 .advantages__title,
@@ -84,9 +159,35 @@ body {
   color: var(--very-dark-desatureted-blue);
 }
 
-.header,
-.header__nav {
-  justify-content: space-between;
+.nav__link,
+.mobile-menu__link,
+.advantages__link,
+.footer__services-link {
+  text-decoration: none;
+}
+
+.nav__link--contact,
+.mobile-menu__link--contact,
+.hero__title,
+.advantages__link,
+.testimonials__title {
+  text-transform: uppercase;
+}
+
+.hero,
+.advantages__card-description,
+.testimonials__item {
+  text-align: center;
+}
+
+.nav__link--contact,
+.mobile-menu__link--contact {
+  padding: 1.25rem 1.875rem;
+  font-family: var(--secondary-font);
+  font-weight: bold;
+  color: var(--black-color);
+  border-radius: 2rem;
+  transition: 0.3s ease;
 }
 
 .header {
@@ -96,32 +197,17 @@ body {
 
 .nav__list {
   right: 0;
-  margin: 0;
-  padding: 0;
   gap: 2.5rem;
-  list-style-type: none;
-}
-
-.nav__item:first-child {
-  padding-left: 0;
 }
 
 .nav__link {
-  display: block;
   font-size: 1.125rem;
-  text-decoration: none;
   color: var(--white-color);
 }
 
 .nav__link--contact {
-  padding: 1.25rem 1.875rem;
-  font-family: var(--secondary-font);
-  font-weight: bold;
-  text-transform: uppercase;
   color: var(--black-color);
   background-color: var(--white-color);
-  border-radius: 2rem;
-  transition: 0.3s ease;
 }
 
 .nav__link--contact:hover {
@@ -132,9 +218,7 @@ body {
 .mobile-menu {
   top: 7.5rem;
   right: 0;
-  width: 100%;
   padding: 0 1.5625rem;
-  box-sizing: border-box;
   z-index: 2;
 }
 
@@ -152,7 +236,6 @@ body {
 }
 
 .mobile-menu__item {
-  display: block;
   padding: .9375rem 0;
 }
 
@@ -164,68 +247,37 @@ body {
   padding: 2.5rem 0 3.125rem 0;
 }
 
-.mobile-menu__link {
-  text-decoration: none;
-}
-
 .mobile-menu__link:not(.mobile-menu__link--contact) {
   color: var(--gray-color);
 }
 
 .mobile-menu__link--contact {
-  padding: 1.25rem 1.875rem;
-  font-family: var(--secondary-font);
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--black-color);
   background-color: var(--mobile-contact-color);
-  border-radius: 2rem;
 }
 
 .hero {
-  position: relative;
   height: 40.625rem;
-  text-align: center;
   background-image: url("./images/desktop/image-header.jpg");
   background-size: cover;
   background-position: center bottom;
 }
 
 .hero__title {
-  display: flex;
-  justify-content: center;
-  margin: 0;
   padding: 6.25rem 0 4.625rem 0;
   font: 900 3rem "Fraunces";
-  text-transform: uppercase;
   letter-spacing: .625rem;
   color: var(--white-color);
-}
-
-.advantages__row {
-  display: flex;
-  width: 100%;
 }
 
 .advantages__row:first-child .advantages__image {
   order: 1;
 }
 
-.advantages__image {
-  width: 50%;
-}
-
 .advantages__description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 50%;
   padding: 0 7.5rem;
-  box-sizing: border-box;
 }
 
 .advantages__title {
-  margin: 0;
   font-size: 2.5rem;
   font-weight: 900;
 }
@@ -237,18 +289,13 @@ body {
 }
 
 .advantages__link {
-  position: relative;
-  display: block;
   width: fit-content;
   font-weight: 900;
-  text-decoration: none;
-  text-transform: uppercase;
   letter-spacing: .0625rem;
 }
 
 .advantages__link::after {
   content: "";
-  position: absolute;
   bottom: -0.1875rem;
   right: -0.375rem;
   width: 113%;
@@ -275,10 +322,6 @@ body {
 }
 
 .advantages__card {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 50%;
   height: 37.5rem;
   background-size: cover;
   background-position: center;
@@ -293,11 +336,8 @@ body {
 }
 
 .advantages__card-description {
-  position: absolute;
   top: 21.875rem;
   width: 22rem;
-  text-align: center;
-  box-sizing: border-box;
   z-index: 2;
 }
 
@@ -307,14 +347,10 @@ body {
 }
 
 .advantages__card:first-child .advantages__card-title {
-  font-size: 2rem;
-  font-weight: 900;
   color: var(--desatureted-cyan-color);
 }
 
 .advantages__card:last-child .advantages__card-title {
-  font-size: 2rem;
-  font-weight: 900;
   color: var(--dark-blue-color);
 }
 
@@ -323,12 +359,10 @@ body {
 }
 
 .advantages__card:first-child .advantages__card-text {
-  margin: 0;
   color: var(--desatureted-cyan-color);
 }
 
 .advantages__card:last-child .advantages__card-text {
-  margin: 0;
   color: var(--dark-blue-color);
 }
 
@@ -338,32 +372,13 @@ body {
 }
 
 .testimonials__title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0 0 6.25rem 0;
-  text-transform: uppercase;
   letter-spacing: .4375rem;
   color: var(--testimonials-title-color);
 }
 
-.testimonials__list {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  gap: 3.125rem;
-  list-style-type: none;
-}
-
 .testimonials__item {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 19.5rem;
-  gap: 3.125rem;
-  text-align: center;
 }
 
 .testimonials__image {
@@ -372,7 +387,6 @@ body {
 }
 
 .testimonials__text {
-  margin: 0;
   line-height: 1.7rem;
   color: var(--testimonials-text-color);
 }
@@ -383,13 +397,8 @@ body {
 }
 
 .testimonials__job {
-  margin: 0;
   font-size: .8125rem;
   color: var(--job-title-color);
-}
-
-.product-gallery {
-  display: flex;
 }
 
 .product-gallery__image {
@@ -397,9 +406,6 @@ body {
 }
 
 .footer {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 3.75rem 0;
   background-color: var(--footer-color);
 }
@@ -411,11 +417,9 @@ body {
 .footer__services-list {
   padding: 2.5rem 0 5rem 0;
   gap: 3.75rem;
-  box-sizing: border-box;
 }
 
 .footer__services-link {
-  text-decoration: none;
   color: var(--dark-moderate-cyan-color);
 }
 
@@ -481,9 +485,6 @@ body {
 
   .advantages__card-description {
     top: 18.75rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     width: 21rem;
   }
 
@@ -506,6 +507,19 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .advantages__row,
+  .advantages__description,
+  .testimonials__list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .advantages__card,
+  .advantages__image {
+    width: 100%;
+  }
+
   .header {
     padding: 2.1875rem 1.5625rem 0;
   }
@@ -538,14 +552,7 @@ body {
     font-size: 2.2rem;
   }
 
-  .advantages__row {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
   .advantages__image {
-    width: 100%;
     order: -1;
   }
 
@@ -554,8 +561,6 @@ body {
   }
 
   .advantages__description {
-    justify-content: center;
-    align-items: center;
     width: 80%;
     padding: 4.375rem 0;
     text-align: center;
@@ -577,12 +582,11 @@ body {
   }
 
   .advantages__card {
-    width: 100%;
     height: 31.25rem;
   }
 
   .advantages__card-description {
-    bottom: 7.5rem;
+    bottom: 5rem;
     width: 20.125rem;
   }
 
@@ -601,15 +605,10 @@ body {
   }
 
   .testimonials__list {
-    flex-direction: column;
     gap: 4.375rem;
   }
 
   .testimonials__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 17.25rem;
     margin: auto;
     gap: 1.875rem;
