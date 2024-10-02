@@ -373,6 +373,7 @@ body,
 
 .testimonials__title {
   margin: 0 0 6.25rem 0;
+  font-weight: 900;
   letter-spacing: .4375rem;
   color: var(--testimonials-title-color);
 }
