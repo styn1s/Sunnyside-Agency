@@ -20,7 +20,7 @@ function updateImages() {
   var images = document.querySelectorAll(".changeable-image");
 
   var imageSet = isMobile ? config.mobileImages : config.desktopImages;
-  
+
   updateBackgroundImages(imageSet);
   updateGalleryImages(images, isMobile);
 
@@ -55,7 +55,7 @@ function updateBackgroundImages(imageSet) {
   if (photographyDesignCard)
     changeBackgroundImage(
       photographyDesignCard,
-      imageSet.photographyDesignCard
+      imageSet.photographyDesignCard,
     );
 }
 
