@@ -256,7 +256,7 @@ body,
 }
 
 .hero {
-  height: 40.625rem;
+  height: 42rem;
   background-image: url("./images/desktop/image-header.jpg");
   background-size: cover;
   background-position: center bottom;
